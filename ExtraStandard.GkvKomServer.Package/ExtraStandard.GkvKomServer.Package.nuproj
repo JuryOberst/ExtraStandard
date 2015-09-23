@@ -33,6 +33,7 @@
     </LicenseUrl>
     <Copyright>Copyright © 2015 DATALINE GmbH &amp; Co. KG</Copyright>
     <Tags>eXTra basis definition gkv komserver kommunikationsserver verfahren</Tags>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="lib\native\_._" />

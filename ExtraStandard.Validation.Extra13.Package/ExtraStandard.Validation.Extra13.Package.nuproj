@@ -33,6 +33,7 @@
     </LicenseUrl>
     <Copyright>Copyright © 2015 DATALINE GmbH &amp; Co. KG</Copyright>
     <Tags>eXTra standard 1.3 validierung validation</Tags>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="lib\native\_._" />
