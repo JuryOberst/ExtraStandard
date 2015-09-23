@@ -42,6 +42,7 @@
     <Content Include="tools\native\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExtraStandard.GkvKomServer.Validation.Extra13.Net40\ExtraStandard.GkvKomServer.Validation.Extra13.Net40.csproj" />
     <ProjectReference Include="..\ExtraStandard.Validation.Package\ExtraStandard.Validation.Package.nuproj" />
   </ItemGroup>
   <PropertyGroup>
