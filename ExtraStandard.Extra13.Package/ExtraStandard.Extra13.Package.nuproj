@@ -36,16 +36,18 @@
     <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="lib\native\_._" />
-    <Content Include="Readme.txt" />
-    <Content Include="tools\native\install.ps1" />
-    <Content Include="tools\native\uninstall.ps1" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ExtraStandard.Extra13.Net40\ExtraStandard.Extra13.Net40.csproj" />
     <ProjectReference Include="..\ExtraStandard.Extra13.Portable.Net403\ExtraStandard.Extra13.Portable.Net403.csproj" />
     <ProjectReference Include="..\ExtraStandard.Extra13.Portable.Net45\ExtraStandard.Extra13.Portable.Net45.csproj" />
     <ProjectReference Include="..\ExtraStandard.Package\ExtraStandard.Package.nuproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LICENSE.md">
+      <Link>LICENSE.md</Link>
+    </Content>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>

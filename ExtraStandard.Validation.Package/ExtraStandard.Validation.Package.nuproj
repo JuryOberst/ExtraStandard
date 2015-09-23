@@ -36,14 +36,16 @@
     <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="lib\native\_._" />
-    <Content Include="Readme.txt" />
-    <Content Include="tools\native\install.ps1" />
-    <Content Include="tools\native\uninstall.ps1" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ExtraStandard.Package\ExtraStandard.Package.nuproj" />
     <ProjectReference Include="..\ExtraStandard.Validation\ExtraStandard.Validation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LICENSE.md">
+      <Link>LICENSE.md</Link>
+    </Content>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
