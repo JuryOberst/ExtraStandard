@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>a46e0361-5081-41ef-80b9-69834b31fdbd</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>Dataline.ExtraStandard.Validation</Id>
+    <Version>1.0.0</Version>
+    <Title>Basis-Definitionen für eXTra-Dokument-Validierungen</Title>
+    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
+    <Owners>DATALINE GmbH &amp; Co. KG</Owners>
+    <Summary>Basis-Definitionen für die Validierung von eXTra-Dokumenten</Summary>
+    <Description>Basis-Definitionen für die Validierung von eXTra-Dokumenten</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>
+    </ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright © 2015 DATALINE GmbH &amp; Co. KG</Copyright>
+    <Tags>eXTra standard basis validierung validation</Tags>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="lib\native\_._" />
+    <Content Include="Readme.txt" />
+    <Content Include="tools\native\install.ps1" />
+    <Content Include="tools\native\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtraStandard.Package\ExtraStandard.Package.nuproj" />
+    <ProjectReference Include="..\ExtraStandard.Validation\ExtraStandard.Validation.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
+  </PropertyGroup>
+  <Target Name="GetNuPkgVersion" Condition="'$(NuGetPackageVersion)' != ''">
+    <PropertyGroup>
+      <Version>$(NuGetPackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
