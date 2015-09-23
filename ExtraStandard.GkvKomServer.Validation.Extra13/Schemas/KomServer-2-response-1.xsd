@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Sandra Rillox (ITSG GmbH) -->
+<!--
+	@author  Oliver Staudt, ITSG GmbH
+    @version 1.3.0
+    @state   RELEASE
+    @date    2012-02-06
+    @changed 2012-02-06 Profiled for GKV-Kommunikationsserver
+
+    Schema module describing eXTra response documents
+    
+    @file    eXTra-response-1.xsd
+    @author  Michael Schäfer, Statistisches Bundesamt
+    @version 1.3.0
+    @state   RELEASE
+    @date    2011-09-12
+    
+    @changed 2009-05-05 MS + Added support for TransformedData
+    @changed 2009-07-17 MS - Removed XHTML namespace
+    @changed 2011-06-17 MS + Added root element 'Transport'
+                           / Deprecated root element 'XMLTransport'
+    @changed 2011-09-12 1.3 MS / Set schema version to 1.3
+                           
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xlog="http://www.extra-standard.de/namespace/logging/1" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns="http://www.extra-standard.de/namespace/response/1" targetNamespace="http://www.extra-standard.de/namespace/response/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.3.0">
+	<!-- Import shared element declarations and type declarations -->
+	<xs:import namespace="http://www.extra-standard.de/namespace/components/1" schemaLocation="KomServer-2-components-1.xsd"/>
+	<!-- Import eXTra Logging namespace -->
+	<xs:import namespace="http://www.extra-standard.de/namespace/logging/1" schemaLocation="KomServer-2-logging-1.xsd"/>
+	<!-- Import XML Encryption namespace -->
+	<xs:import namespace="http://www.w3.org/2001/04/xmlenc#" schemaLocation="xenc-schema.xsd"/>
+	<xs:import namespace="http://www.extra-standard.de/namespace/plugins/1" schemaLocation="KomServer-2-plugins-1.xsd"/>
+	<xs:complexType name="TransportResponseType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:RootElementType">
+				<xs:sequence>
+					<xs:element ref="TransportHeader">
+						<xs:annotation>
+							<xs:documentation>TransportHeader-Element, enthält mehrere Kindelemente.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="TransportPlugIns" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="TransportBody">
+						<xs:annotation>
+							<xs:documentation>TransportBody enthält den Body der Transportebene.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xlog:Logging" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:Signatures" minOccurs="0" maxOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Other type declarations -->
+	<!-- TransportResponseBodyType
+        @changed 2009-05-05 MS + Added TransformedData to choice group
+    -->
+	<xs:complexType name="TransportResponseBodyType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOutOptionalVersionType">
+				<xs:choice minOccurs="0">
+					<xs:element ref="xenc:EncryptedData" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:TransformedData" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="Package" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Package enthält eine Instanz der Paketebene.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Message" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:Data" minOccurs="0" maxOccurs="0"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PackageResponseType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOutOptionalVersionType">
+				<xs:sequence>
+					<xs:element ref="PackageHeader">
+						<xs:annotation>
+							<xs:documentation>PackageHeader den Header einer Instanz der Paketebene.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="PackagePlugIns" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>PackagePlugIn-Element, beinhaltet mehrere Kinderelemente.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="PackageBody">
+						<xs:annotation>
+							<xs:documentation>PackageBody-Element beinhaltet mehrere Kinderelemente.
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xlog:Logging" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:Signatures" minOccurs="0" maxOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PackageResponseHeaderType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOutOptionalVersionType">
+				<xs:sequence>
+					<xs:element ref="xcpt:TestIndicator" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:Sender"/>
+					<xs:element ref="xcpt:Receiver"/>
+					<xs:element ref="xcpt:RequestDetails"/>
+					<xs:element ref="xcpt:ResponseDetails"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- PackageResponseBodyType
+        @changed 2009-05-05 MS + Added TransformedData to choice group
+    -->
+	<xs:complexType name="PackageResponseBodyType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:choice minOccurs="0">
+					<xs:element ref="xenc:EncryptedData" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:TransformedData" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="Message" minOccurs="0" maxOccurs="0"/>
+					<xs:element ref="xcpt:Data"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MessageResponseType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:sequence>
+					<xs:element ref="MessageHeader"/>
+					<xs:element ref="MessagePlugIns" minOccurs="0"/>
+					<xs:element ref="MessageBody"/>
+					<xs:element ref="xlog:Logging" minOccurs="0"/>
+					<xs:element ref="xcpt:Signatures" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MessageResponseHeaderType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:sequence>
+					<xs:element ref="xcpt:TestIndicator" minOccurs="0"/>
+					<xs:element ref="xcpt:Sender"/>
+					<xs:element ref="xcpt:Receiver"/>
+					<xs:element ref="xcpt:RequestDetails"/>
+					<xs:element ref="xcpt:ResponseDetails"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- MessageRequestBodyType
+        @changed 2009-05-05 MS + Added TransformedData to choice group
+    -->
+	<xs:complexType name="MessageResponseBodyType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:choice minOccurs="0">
+					<xs:element ref="xenc:EncryptedData"/>
+					<xs:element ref="xcpt:TransformedData"/>
+					<xs:element ref="xcpt:Data"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Element declarations -->
+	<!-- Transport layer -->
+	<xs:element name="Transport" type="TransportResponseType">
+		<xs:annotation>
+			<xs:documentation>Startknoten
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- @deprecated 2011-06-21 1.3 MS -->
+	<xs:element name="XMLTransport" type="TransportResponseType"/>
+	<xs:element name="TransportHeader" type="xcpt:TransportResponseHeaderType"/>
+	<xs:element name="TransportPlugIns" type="xcpt:AnyPlugInContainerType"/>
+	<xs:element name="TransportBody" type="TransportResponseBodyType"/>
+	<!-- Package layer -->
+	<xs:element name="Package" type="PackageResponseType"/>
+	<xs:element name="PackageHeader" type="PackageResponseHeaderType"/>
+	<xs:element name="PackagePlugIns" type="xplg:StatusanfragePackagePluginContainerType"/>
+	<xs:element name="PackageBody" type="PackageResponseBodyType"/>
+	<!-- Message layer -->
+	<xs:element name="Message" type="MessageResponseType"/>
+	<xs:element name="MessageHeader" type="MessageResponseHeaderType"/>
+	<xs:element name="MessagePlugIns" type="xcpt:AnyPlugInContainerType"/>
+	<xs:element name="MessageBody" type="MessageResponseBodyType"/>
+</xs:schema>

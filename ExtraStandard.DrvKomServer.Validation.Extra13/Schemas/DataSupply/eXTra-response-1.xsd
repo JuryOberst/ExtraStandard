@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Schema module describing eXTra response documents
+	Angepasst für DSRV
+    
+    @file    eXTra-response-1.xsd
+    @author  Michael Schäfer, Statistisches Bundesamt
+    @version 1.3.0
+    @state   RELEASE
+    @date    2011-09-12
+    
+    @changed 2009-05-05 MS + Added support for TransformedData
+    @changed 2009-07-17 MS - Removed XHTML namespace
+    @changed 2011-06-17 MS + Added root element 'Transport'
+                           / Deprecated root element 'XMLTransport'
+    @changed 2011-09-12 1.3 MS / Set schema version to 1.3
+                           
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1"  xmlns="http://www.extra-standard.de/namespace/response/1" targetNamespace="http://www.extra-standard.de/namespace/response/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.3.0">
+	<!-- Import shared element declarations and type declarations -->
+	<xs:import namespace="http://www.extra-standard.de/namespace/components/1" schemaLocation="eXTra-components-1.xsd"/>
+	
+	<xs:complexType name="TransportResponseType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:RootElementType">
+				<xs:sequence>
+					<xs:element ref="TransportHeader"/>
+					<xs:element ref="TransportBody"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Other type declarations -->
+	<xs:complexType name="TransportResponseHeaderType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:sequence>
+					<xs:element ref="xcpt:TestIndicator" minOccurs="0"/>
+					<xs:element ref="xcpt:Sender"/>
+					<xs:element ref="xcpt:Receiver"/>
+					<xs:element ref="xcpt:RequestDetails"/>
+					<xs:element ref="xcpt:ResponseDetails"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TransportResponseBodyType
+        @changed 2009-05-05 MS + Added TransformedData to choice group
+    -->
+	<xs:complexType name="TransportResponseBodyType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!-- Element declarations -->
+	<!-- Transport layer -->
+	<xs:element name="Transport" type="TransportResponseType"/>
+	<xs:element name="TransportHeader" type="TransportResponseHeaderType"/>
+	<xs:element name="TransportBody" type="TransportResponseBodyType"/>
+
+</xs:schema>

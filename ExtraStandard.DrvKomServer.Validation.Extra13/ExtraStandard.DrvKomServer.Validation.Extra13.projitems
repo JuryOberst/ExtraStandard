@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>dbcc7b89-9148-468c-959d-db3ab7b666df</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ExtraStandard.DrvKomServer.Validation.Extra13</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\extra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-messages-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\eXTra-vorlage-grahik.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\extra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-messages-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\eXTra-vorlage-grahik.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\extra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-messages-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\eXTra-vorlage-grahik.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\xmldsig-core-schema.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DrvExtraValidationResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrvExtraValidator.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Beschreibt ein Zertifikat (z.B. für Rückverschlüsselung) -->
+<xplg:Certificates xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" version="1.0">
+    <xplg:X509EncCertificate>
+        <xplg:Value>b64value</xplg:Value>
+    </xplg:X509EncCertificate>
+</xplg:Certificates>

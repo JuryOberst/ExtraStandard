@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsrv:ExtraError
+    xmlns:xsrv="http://www.extra-standard.de/namespace/service/1"
+    xmlns:xcpt="http://www.extra-standard.de/namespace/components/1"
+    version="1.0"
+    >
+    
+    <xsrv:Reason>http://www.extra-standard.de/reason/INVALID_REQUEST</xsrv:Reason>
+    
+    <xcpt:RequestID>reqid</xcpt:RequestID>
+    <xcpt:ResponseID>resid</xcpt:ResponseID>
+    <xcpt:TimeStamp>2010-02-21T21:15:00</xcpt:TimeStamp>
+    <xcpt:Application>
+        <xcpt:Product>my-extra-server 1.0</xcpt:Product>
+    </xcpt:Application>
+    
+    <xcpt:Report highestWeight="http://www.extra-standard.de/weight/ERROR">
+        <xcpt:Flag weight="http://www.extra-standard.de/weight/ERROR">
+            <xcpt:Code>0100</xcpt:Code>
+            <xcpt:Text>Der Request ist nicht wohlgeformt</xcpt:Text>
+            <xcpt:XPath>/a/b[4]/c[2]/d</xcpt:XPath>
+        </xcpt:Flag>
+    </xcpt:Report>
+    
+</xsrv:ExtraError>

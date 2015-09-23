@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Variante 2 Gruppierte Kontakte mit jeweils einer Mailadresse, Telefonnummer etc.
+    Attribut 'usageHint' kann einen natürlichsprachigen Hinweis zur Art und
+    Verfügbarkeit für jeweils eine Kontaktgruppe enthalten. 
+-->
+<xplg:Contacts xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" version="1.0">
+    
+    <xplg:SenderContact usageHint="Technischer Support 24/7">
+        <xplg:Endpoint type="SMTP">support@extra.is.great.com</xplg:Endpoint>
+    </xplg:SenderContact>
+    
+    <xplg:SenderContact usageHint="Allgemeine Informationen">
+        <xplg:Endpoint type="SMTP">info@extra.is.great.com</xplg:Endpoint>
+    </xplg:SenderContact>
+    
+</xplg:Contacts>
+    
+
+

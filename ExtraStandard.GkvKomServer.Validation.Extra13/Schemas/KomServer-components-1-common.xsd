@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	@author  Oliver Staudt, ITSG GmbH
+    @version 1.3.0
+    @state   RELEASE
+    @date    2012-02-06
+    @changed 2012-02-06 Profiled for GKV-Kommunikationsserver
+
+-->
+<xs:schema xmlns="http://www.extra-standard.de/namespace/components/1" xmlns:xcode="http://www.extra-standard.de/namespace/codelists/1" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.extra-standard.de/namespace/components/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.3.0">
+	<xs:simpleType name="SimpleClassType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="BetriebsnummerClassIDType">
+		<xs:annotation>
+			<xs:documentation>Klasse modeliert einen Typ eines Knotens der eine Class Attribut mit "Betriebsnummer" hat. Es wird für Sender und Empfänger genutzt</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:restriction base="ClassifiableIDType">
+				<xs:length value="8"/>
+				<xs:pattern value="[0-9]{8}"/>
+				<xs:attribute name="class" use="optional">
+					<xs:annotation>
+						<xs:documentation>Eine klassifizierende Angabe.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="ClassifiableIDAtrributeType">
+							<xs:enumeration value="Betriebsnummer"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="Name">
+		<xs:annotation>
+			<xs:documentation>Name der Institution.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:restriction base="TextType">
+					<xs:maxLength value="100"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TextType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ReceiverType">
+		<xs:sequence>
+			<xs:element name="ReceiverID" type="BetriebsnummerClassIDType">
+				<xs:annotation>
+					<xs:documentation>Betriebsnummer des Empfängers z.B. “23456789”</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="Name" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name des Empfängers, z.B. "Beispiel GmbH".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KomServerReceiverType">
+		<xs:annotation>
+			<xs:documentation>Diese Klasse modeliert den KomServer als Empfänger</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="ReceiverType">
+				<xs:sequence>
+					<xs:element name="ReceiverID">
+						<xs:annotation>
+							<xs:documentation>Betriebsnummer des GKV-Kommunikationsservers.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:restriction base="BetriebsnummerClassIDType">
+									<xs:pattern value="[0-9]{8}"/>
+									<xs:enumeration value="19878051"/>
+								</xs:restriction>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="Name" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ZeroClassifyedType">
+		<xs:annotation>
+			<xs:documentation>Klasse modeliert einen Typ eines Knotens der eine Class Attribut mit 0 hat</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:restriction base="ClassifiableIDType">
+				<xs:attribute name="class" use="optional">
+					<xs:annotation>
+						<xs:documentation>Das Attribut enthält den Typ </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="ClassifiableIDAtrributeType">
+							<xs:enumeration value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ClassifiableIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="class" type="ClassifiableIDAtrributeType" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ClassifiableIDAtrributeType">
+		<xs:restriction base="SimpleClassType"/>
+	</xs:simpleType>
+	<xs:simpleType name="AbstractProcedureType">
+		<xs:restriction base="SimpleNameType"/>
+	</xs:simpleType>
+	<xs:simpleType name="ProcedureType">
+		<xs:restriction base="AbstractProcedureType">
+			<xs:pattern value="[a-zA-Z]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProcedureDeliveryServerType">
+		<xs:restriction base="AbstractProcedureType">
+			<xs:enumeration value="DeliveryServer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SimpleNameType">
+		<xs:restriction base="xs:token"/>
+	</xs:simpleType>
+</xs:schema>
