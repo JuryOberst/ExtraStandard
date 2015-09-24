@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>1086368f-002c-47f5-a660-2cd3474bf830</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>Dataline.ExtraStandard.DrvKomServer.Validation.Extra13</Id>
+    <Version>1.0.0</Version>
+    <Title>Validierungen von eXTra 1.3-Dokumenten (DRV-Kommunikationsserver)</Title>
+    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
+    <Owners>DATALINE GmbH &amp; Co. KG</Owners>
+    <Summary>Validierungen von eXTra 1.3-Dokumenten (DRV-Kommunikationsserver)</Summary>
+    <Description>Validierungen von eXTra 1.3-Dokumenten für das Sofortmeldungsverfahren</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>
+    </ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright © 2015 DATALINE GmbH &amp; Co. KG</Copyright>
+    <Tags>eXTra standard 1.3 validierung validation DRV KomServer Kommunikationsserver Verfahren Sofortmeldung</Tags>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtraStandard.DrvKomServer.Validation.Extra13.Net40\ExtraStandard.DrvKomServer.Validation.Extra13.Net40.csproj" />
+    <ProjectReference Include="..\ExtraStandard.Validation.Package\ExtraStandard.Validation.Package.nuproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LICENSE.md">
+      <Link>LICENSE.md</Link>
+    </Content>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
+  </PropertyGroup>
+  <Target Name="GetNuPkgVersion" Condition="'$(NuGetPackageVersion)' != ''">
+    <PropertyGroup>
+      <Version>$(NuGetPackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
