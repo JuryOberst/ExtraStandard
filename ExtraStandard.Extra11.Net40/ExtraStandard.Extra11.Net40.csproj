@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\ExtraStandard.Extra11.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Dataline.ExtraStandard.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +56,11 @@
       <Project>{90e2c66f-da18-4ea0-a64f-67d9dc821b54}</Project>
       <Name>ExtraStandard.Net40</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dataline.ExtraStandard.snk">
+      <Link>Dataline.ExtraStandard.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\ExtraStandard.Extra11\ExtraStandard.Extra11.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,8 +34,17 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\ExtraStandard.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Dataline.ExtraStandard.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="..\Dataline.ExtraStandard.snk">
+      <Link>Dataline.ExtraStandard.snk</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">

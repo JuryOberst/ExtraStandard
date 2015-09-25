@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\ExtraStandard.DrvKomServer.Extra13.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Dataline.ExtraStandard.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\ExtraStandard.Extra13.Portable.Net403\ExtraStandard.Extra13.Portable.Net403.csproj">
@@ -47,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dataline.ExtraStandard.snk">
+      <Link>Dataline.ExtraStandard.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\ExtraStandard.DrvKomServer.Extra13\ExtraStandard.DrvKomServer.Extra13.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
