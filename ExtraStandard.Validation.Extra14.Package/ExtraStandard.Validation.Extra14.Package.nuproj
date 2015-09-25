@@ -18,7 +18,7 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>ExtraStandard.Validation.Extra14</Id>
+    <Id>Dataline.ExtraStandard.Validation.Extra14</Id>
     <Version>1.0.0</Version>
     <Title>Validierungen von eXTra 1.4-Dokumenten</Title>
     <Authors>DATALINE GmbH &amp; Co. KG</Authors>
