@@ -29,11 +29,11 @@
     </ReleaseNotes>
     <ProjectUrl>
     </ProjectUrl>
-    <LicenseUrl>
-    </LicenseUrl>
+    <LicenseUrl>https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md</LicenseUrl>
     <Copyright>Copyright © 2015 DATALINE GmbH &amp; Co. KG</Copyright>
     <Tags>eXTra standard 1.1</Tags>
-    <EmbedSourceFiles>true</EmbedSourceFiles>
+    <EmbedSourceFiles>false</EmbedSourceFiles>
+    <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExtraStandard.Extra11.Net40\ExtraStandard.Extra11.Net40.csproj" />
