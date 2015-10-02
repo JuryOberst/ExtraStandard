@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>622321f7-3522-4912-b563-785f6424ff79</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ExtraStandard.GkvKomServer.Validation.Extra14</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-0-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-0-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-0-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-0-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-1-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-DataRequest-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-2-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-ConfirmationOfReceipt-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-logging-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-3-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\KomServer-components-1-common.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_0_error.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_1_request_senden_datenlieferungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_2_response_senden_datenlieferungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_3_Body_request_anfordern_rueckmeldungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_3_request_anfordern_rueckmeldungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_4_response_abholen_rueckmeldungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_5_Body_request_senden_empfangsquittungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_5_request_senden_empfangsquittungen.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)xsd\xsd_KomServer_6_response_senden_empfangsquittungen.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GkvExtraValidationResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GkvExtraValidator.cs" />
+  </ItemGroup>
+</Project>

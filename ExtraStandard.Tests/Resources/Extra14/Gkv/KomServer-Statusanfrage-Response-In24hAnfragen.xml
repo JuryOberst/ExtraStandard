@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xres:Transport profile="http://www.extra-standard.de/profile/DEUEVGKV/1.4" version="1.4" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 ../xsd/xsd_KomServer_4_response_abholen_rueckmeldungen.xsd">
+	<xres:TransportHeader> <!-- Im Transportheader sind keine Auffälligkeiten, erst auf der Paketebene sind Hinweise -->
+		<xcpt:TestIndicator>http://www.extra-standard.de/test/PROCESS</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345671</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>19878051</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>Request(1234-1234-CAFE-BEAF)</xcpt:RequestID>
+			<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>Testdaten</xcpt:Product>
+				<xcpt:Manufacturer>ITSG GmbH</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>DeliveryServer</xcpt:Procedure>
+			<xcpt:DataType>http://kommunikationsserver.itsg.de/anfrage</xcpt:DataType>
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails>
+			<xcpt:ResponseID>A(cef67a63-fda3-44eb-a422-45be0197ffbe)</xcpt:ResponseID>
+			<xcpt:TimeStamp>2012-03-19T17:13:16</xcpt:TimeStamp>
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>I000</xcpt:Code>
+					<xcpt:Text>Alles okay.</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody>
+		<xres:Package> <!-- Das erste Package zeigt keine Auffälligkeiten -->
+			<xres:PackageHeader>
+				<xcpt:Sender>
+					<xcpt:SenderID>12345671</xcpt:SenderID>
+				</xcpt:Sender>
+				<xcpt:Receiver>
+					<xcpt:ReceiverID>05174740</xcpt:ReceiverID>
+				</xcpt:Receiver>
+				<xcpt:RequestDetails>
+					<xcpt:RequestID>Request(1234-1234-CAFE-BEAF)</xcpt:RequestID>
+					<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+					<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+				</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>20120319161318700001001</xcpt:ResponseID>
+					<xcpt:TimeStamp>2012-03-19T17:13:18</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+							<xcpt:Code>I000</xcpt:Code>
+							<xcpt:Text>Alles okay.</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackagePlugIns>
+				<xplg:DataTransforms>
+					<xplg:Compression order="1">
+						<xplg:Algorithm id="http://www.extra-standard.de/transforms/compression/NONE"/>
+						<xplg:InputData bytes="1076"/>
+					</xplg:Compression>
+					<xplg:Encryption order="2">
+						<xplg:Algorithm id="http://www.extra-standard.de/transforms/encryption/PKCS7"/>
+						<xplg:OutputData bytes="4135"/>
+					</xplg:Encryption>
+				</xplg:DataTransforms>
+				<xplg:DataSource>
+					<xplg:DataContainer type="http://www.extra-standard.de/container/FILE" name="TDUA0000005" created="2012-03-19T17:13:23" encoding="I7"/>
+				</xplg:DataSource>
+			</xres:PackagePlugIns>
+			<xres:PackageBody>
+				<xcpt:Data>
+					<xcpt:Base64CharSequence> <!-- Hier ist normal ein Rückmeldepaket des KomServers zu finden -->
+					PCEtLSBIaWVyIGlzdCBub3JtYWwgZWluIFL8Y2ttZWxkZXBha2V0IGRlcyBLb21TZXJ2ZXJzIHp1IGZpbmRlbiAtLT4=</xcpt:Base64CharSequence>
+				</xcpt:Data>
+			</xres:PackageBody>
+		</xres:Package>
+		<xres:Package> <!-- Dieses Paket hat einen Hinweis, dass der Arbeitgeber in 24 h erneut nachfragen soll, da für ihn noch Daten aufbereitet werden -->
+			<xres:PackageHeader>
+				<xcpt:Sender>
+					<xcpt:SenderID>12345671</xcpt:SenderID>
+				</xcpt:Sender>
+				<xcpt:Receiver>
+					<xcpt:ReceiverID>19878051</xcpt:ReceiverID>
+				</xcpt:Receiver>
+				<xcpt:RequestDetails>
+					<xcpt:RequestID>Request(1234-1234-CAFE-BEAF)</xcpt:RequestID>
+					<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+					<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+				</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>20120319161318800002001</xcpt:ResponseID>
+					<xcpt:TimeStamp>2012-03-19T17:13:18</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+							<xcpt:Code>I002</xcpt:Code>
+							<xcpt:Text>Bitte fragen Sie in 24 h erneut an.</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackageBody/>
+		</xres:Package>
+	</xres:TransportBody>
+</xres:Transport>

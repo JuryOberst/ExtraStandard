@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xsrv:ExtraError version="1.0" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xsrv="http://www.extra-standard.de/namespace/service/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/service/1 ../xsd/KomServer-0-error-1.xsd">
+	<xsrv:Reason>http://www.extra-standard.de/reason/INVALID_REQUEST</xsrv:Reason>
+	<xcpt:ResponseID>A(3794b25e-cafe-4dbe-872f-513c2e6d7ff8)</xcpt:ResponseID>
+	<xcpt:TimeStamp>2012-12-21T09:30:47Z</xcpt:TimeStamp>
+	<xcpt:Report highestWeight="http://www.extra-standard.de/weight/ERROR">
+		<xcpt:Flag weight="http://www.extra-standard.de/weight/ERROR">
+				<xcpt:Code>E003</xcpt:Code>
+				<xcpt:Text>Fehler in der eXTra-XML Struktur: Bei der XSD-Prüfung der gesendeten XML-Nachricht sind folgende Fehler aufgetreten:  # Zeile: 10 - Position: 5 - Das Element 'Receiver' in Namespace 'http://www.extra-standard.de/namespace/components/1' hat ein ungültiges untergeordnetes Element 'Name' in Namespace 'http://www.extra-standard.de/namespace/components/1'. Erwartet wurde die Liste möglicher Elemente: 'ReceiverID' in Namespace 'http://www.extra-standard.de/namespace/components/1'. ## FehlerCode: E003 ## Workflow-ID: A(3794b25e-5d4d-4dbe-872f-513c2e6d7ff8)</xcpt:Text>
+		</xcpt:Flag>
+	</xcpt:Report>
+</xsrv:ExtraError>

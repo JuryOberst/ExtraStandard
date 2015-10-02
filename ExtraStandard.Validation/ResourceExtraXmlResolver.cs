@@ -35,6 +35,12 @@ namespace ExtraStandard.Validation
         }
 
         /// <summary>
+        /// Holt den Zeitstempel des letzten Ladens einer XSD-Entität
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public DateTimeOffset? LastGetEntityTimestamp { get; private set; }
+
+        /// <summary>
         /// Holt die Basis-URL für die nachzuladenden XSD-Dateien
         /// </summary>
         public Uri RootUrl { get; }
@@ -52,6 +58,7 @@ namespace ExtraStandard.Validation
             var stream = _resourceAssembly.GetManifestResourceStream(ressourceName);
             if (stream == null)
                 throw new System.Xml.Schema.XmlSchemaException($"Schema from resource {absoluteUri} not found.");
+            LastGetEntityTimestamp = DateTimeOffset.Now;
             return stream;
         }
     }

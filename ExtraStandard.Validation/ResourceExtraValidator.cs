@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.ComponentModel;
+using System.Xml.Linq;
 
 namespace ExtraStandard.Validation
 {
@@ -20,6 +22,12 @@ namespace ExtraStandard.Validation
             _validationResources = validationResources;
             _resolver = new ResourceExtraXmlResolver(_validationResources.RootUrl, _validationResources.ResourceAssembly);
         }
+
+        /// <summary>
+        /// Holt den Zeitstempel des letzten Ladens einer XSD-Entität
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public DateTimeOffset? LastGetEntityTimestamp => _resolver.LastGetEntityTimestamp;
 
         /// <summary>
         /// Validiert das eXTra-Dokument

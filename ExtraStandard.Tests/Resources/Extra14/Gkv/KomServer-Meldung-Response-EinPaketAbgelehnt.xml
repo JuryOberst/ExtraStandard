@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xres:Transport profile="http://www.extra-standard.de/profile/DEUEVGKV/1.4" version="1.4" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 ../xsd/xsd_KomServer_2_response_senden_datenlieferungen.xsd">
+	<xres:TransportHeader>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345671</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>19878051</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>Request(0123-0123-CAFE-BEAF)</xcpt:RequestID>
+			<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>XML Beispieldaten V1.0</xcpt:Product>
+				<xcpt:Manufacturer>ITSG GmbH</xcpt:Manufacturer>
+			</xcpt:Application>
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails>
+			<xcpt:ResponseID>M(1a0ae7c9-2323-cafe-d4b3-e0bf35ff8d2c)</xcpt:ResponseID>
+			<xcpt:TimeStamp>2012-12-21T14:30:48.0Z</xcpt:TimeStamp>
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>I000</xcpt:Code>
+					<xcpt:Text>Alles okay.</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody>
+		<xres:Package> <!-- Erstes Paket wurde erfolgreich verarbeitet -->
+			<xres:PackageHeader>
+				<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+				<xcpt:Sender>
+					<xcpt:SenderID>12345671</xcpt:SenderID>
+				</xcpt:Sender>
+				<xcpt:Receiver>
+					<xcpt:ReceiverID>01000262</xcpt:ReceiverID>
+				</xcpt:Receiver>
+				<xcpt:RequestDetails>
+					<xcpt:RequestID>Request(0123-0123-CAFE-BEB0)</xcpt:RequestID>
+					<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+					<xcpt:Procedure>DUA</xcpt:Procedure>
+					<xcpt:DataType>http://kommunikationsserver.itsg.de/meldung</xcpt:DataType>
+				</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>322149141553209702656</xcpt:ResponseID>
+					<xcpt:TimeStamp>2001-12-17T09:30:48.0Z</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+							<xcpt:Code>I000</xcpt:Code>
+							<xcpt:Text>Paketebene erfolgreich, Paket angenommen.</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackageBody/>
+		</xres:Package>
+		<xres:Package> <!-- Zweites Paket wurde nicht verarbeitet weil ein Fehler aufgetreten ist -->
+			<xres:PackageHeader>
+				<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+				<xcpt:Sender>
+					<xcpt:SenderID>12345671</xcpt:SenderID>
+				</xcpt:Sender>
+				<xcpt:Receiver>
+					<xcpt:ReceiverID>01000262</xcpt:ReceiverID>
+				</xcpt:Receiver>
+				<xcpt:RequestDetails>
+					<xcpt:RequestID>Request(0123-0123-CAFE-BEB1)</xcpt:RequestID>
+					<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp>
+					<xcpt:Procedure>DUA</xcpt:Procedure>
+					<xcpt:DataType>http://kommunikationsserver.itsg.de/meldung</xcpt:DataType>
+				</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>322149141553209703657</xcpt:ResponseID>
+					<xcpt:TimeStamp>2001-12-17T09:30:48.0Z</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/ERROR">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/ERROR">
+							<xcpt:Code>E002</xcpt:Code>
+							<xcpt:Text>Fehlerhafte Daten in der eXTra-Standard-Message-XML: Der aus dem eXTra-XML berechnete KKS-Dateiname besitzt einen falschen Präfix ## FehlerCode: E002 ## Workflow-ID: M(1a0ae7c9-2323-cafe-d4b3-e0bf35ff8d2c)</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackageBody/>
+		</xres:Package>
+	</xres:TransportBody>
+</xres:Transport>

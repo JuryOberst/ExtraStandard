@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    @author  Sebastian Stadtmüller, ITSG GmbH
+    @version 1.4.0
+    @state   RELEASE
+    @date    2014-12-12
+    @changed 2014-12-12 Profiled for GKV-Kommunikationsserver
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmsg="http://www.extra-standard.de/namespace/message/1" xmlns="http://www.extra-standard.de/namespace/message/1" targetNamespace="http://www.extra-standard.de/namespace/message/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4.0">
+	<xs:include schemaLocation="KomServer-2-DataRequest-1.xsd"/>
+</xs:schema>

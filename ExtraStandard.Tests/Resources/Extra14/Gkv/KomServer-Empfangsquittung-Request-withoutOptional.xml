@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xreq:Transport profile="http://www.extra-standard.de/profile/DEUEVGKV/1.4" version="1.4" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns:xreq="http://www.extra-standard.de/namespace/request/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/request/1 ../xsd/xsd_KomServer_5_request_senden_empfangsquittungen.xsd">
+	<xreq:TransportHeader>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345671</xcpt:SenderID><!--  Die Betriebsnummer des Abesenders muss in diesen Knoten eingefügt werden -->
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>19878051</xcpt:ReceiverID><!-- Die Betriebsnummer des GKV-Kommunikationsservers, diese bleibt fest -->
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>Request(1234-1234-CAFE-BEAF)</xcpt:RequestID><!-- Ihre RequestID wird hier eingetragen, achten Sie bitte auf die Eindeutigkeit der Nummer. Dies kann helfen eine Ihrer Anfragen später zu anaylsieren -->
+			<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp><!-- Das aktuelle Datum, an dem die Anfrage verschickt wurde.-->
+			<xcpt:Application>
+				<xcpt:Product>XML Beispieldaten V1.0</xcpt:Product><!-- Hier sollte die Bezeichung Ihres Produktes stehen mit einer Versionsnummer -->
+				<xcpt:Manufacturer>ITSG GmbH</xcpt:Manufacturer><!-- Hier sollte der Hersteller des Produktes aufgeführt werden -->
+			</xcpt:Application>
+			<xcpt:Procedure>DeliveryServer</xcpt:Procedure>
+			<xcpt:DataType>http://kommunikationsserver.itsg.de/quittung</xcpt:DataType>
+		</xcpt:RequestDetails>
+	</xreq:TransportHeader>
+	<xreq:TransportPlugIns>
+		<xplg:Contacts>
+			<xplg:SenderContact>
+				<xplg:Endpoint type="SMTP">Ansprechpartner@MusterAG.itsg.de</xplg:Endpoint><!-- Ihre E-Mail Adresse -->
+			</xplg:SenderContact>
+		</xplg:Contacts>
+		<xplg:DataTransforms>
+			<xplg:Compression order="1">
+				<xplg:Algorithm id="http://www.extra-standard.de/transforms/compression/NONE"/>
+			</xplg:Compression>
+			<xplg:Encryption order="2">
+				<xplg:Algorithm id="http://www.extra-standard.de/transforms/encryption/PKCS7"/>
+			</xplg:Encryption>
+		</xplg:DataTransforms>
+	</xreq:TransportPlugIns>
+	<xreq:TransportBody>
+		<xcpt:Data>
+			<xcpt:Base64CharSequence>
+						<!--
+							Base64 Codierung
+							XML-Schema xs:base64binary
+							"The lexical forms of base64Binary values are limited to the 65 characters of the Base64 Alphabet defined in [RFC 2045], i.e., a-z, A-Z, 0-9, the plus sign (+), the forward slash (/) and the equal sign (=), together with the characters defined in [XML 1.0 (Second Edition)] as white space. No other characters are allowed."
+							
+							XML-Standard 2.3
+							"White Space [3]    S    ::=    (#x20 | #x9 | #xD | #xA)+"
+						-->
+						<!--
+							Konvention: die fachlichen Daten werden gemaess PlugIn DataTransforms komprimiert und verschluesselt
+						-->
+						RGllcyBpc3QgZWluZSBUZXN0emVpY2hlbmtldHRlIGRpZSBmw7xyIGRpZSBCZWlz
+						cGllbGRhdGVpZW4gZGVzIEtvbW11bmlrYXRpb25zc2VydmVycyBlbnR3b3JmZW4g
+						d3VyZGUgdW5kIG51ciB6dSBUZXN0endlY2tlbiBkaWVudC4NCkJpdHRlIGJlYWNo
+						dGVuIFNpZSBkaWUgRG9rdW1lbnRhdGlvbiBkZXMgS29tbXVuaWthdGlvbnNzZXJ2
+						ZXJzLg==			
+			</xcpt:Base64CharSequence>
+		</xcpt:Data>
+	</xreq:TransportBody>
+</xreq:Transport>

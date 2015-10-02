@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xres:Transport profile="http://www.extra-standard.de/profile/DEUEVGKV/1.4" version="1.4" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 ../xsd/xsd_KomServer_2_response_senden_datenlieferungen.xsd">
+	<xres:TransportHeader>
+		<xcpt:Sender>
+			<xcpt:SenderID class="Betriebsnummer">12345671</xcpt:SenderID><!--  Die Betriebsnummer des Abesenders muss in diesen Knoten eingefügt werden -->
+			<xcpt:Name>Muster Firma GmbH</xcpt:Name><!-- Der Entsprechende Firmennamen zu der Betriebsnummer muss hier eingefügt werden -->
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID class="Betriebsnummer">19878051</xcpt:ReceiverID><!-- Die Betriebsnummer des GKV-Kommunikationsservers, diese bleibt fest -->
+			<xcpt:Name>GKV-Kommunikationsserver</xcpt:Name>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails><!-- der RequestDetails aus dem dem Request sind hier wieder aufgeführt -->
+			<xcpt:RequestID>Request(0123-0123-CAFE-BEAF)</xcpt:RequestID><!-- Ihre RequestID wird hier eingetragen, achten Sie bitte auf die Eindeutigkeit der Nummer. Dies kann helfen eine Ihrer Anfragen später zu anaylsieren -->
+			<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp><!-- Das aktuelle Datum, an dem die Anfrage verschickt wurde.-->
+			<xcpt:Application>
+				<xcpt:Product>XML Beispieldaten V1.0</xcpt:Product><!-- Hier sollte die Bezeichung Ihres Produktes stehen mit einer Versionsnummer -->
+				<xcpt:Manufacturer>ITSG GmbH</xcpt:Manufacturer><!-- Hier sollte der Hersteller des Produktes aufgeführt werden -->
+			</xcpt:Application>
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-acknowledgement</xcpt:Scenario><!-- Fester Wert -->
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails><!-- dieser Knoten beinhaltet die Informationen der Antwort des Kommunikationsservers auf Transportebene -->
+			<xcpt:ResponseID>M(1a0ae7c9-2323-cafe-d4b3-e0bf35ff8d2c)</xcpt:ResponseID><!-- Die Trackingnummer der Anfrage -->
+			<xcpt:TimeStamp>2012-12-21T14:30:48.0Z</xcpt:TimeStamp><!-- Das Verarbeitungsdatum Ihrer Anfrage -->
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>I000</xcpt:Code>
+					<xcpt:Text>Alles okay.</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody>
+		<xres:Package>
+			<xres:PackageHeader>
+				<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator><!-- Stellen sie hier ein ob es sich um einen Test handelt oder um echt Daten -->
+				<xcpt:Sender>
+					<xcpt:SenderID class="Betriebsnummer">12345671</xcpt:SenderID><!-- Die Betriebsnummer des Abesenders muss in diesen Knoten eingefügt werden -->
+					<xcpt:Name>Muster Firma GmbH</xcpt:Name><!-- Der Entsprechende Firmennamen zu der Betriebsnummer muss hier eingefügt werden -->
+				</xcpt:Sender>
+				<xcpt:Receiver>
+					<xcpt:ReceiverID class="Betriebsnummer">01000262</xcpt:ReceiverID><!-- Die Betriebsnummer des Empfängers (DAV) muss in diesen Knoten eingefügt werden -->
+					<xcpt:Name>AOK</xcpt:Name><!-- Der Entsprechende Firmennamen zu der Betriebsnummer muss hier eingefügt werden -->
+				</xcpt:Receiver>
+				<xcpt:RequestDetails>
+					<xcpt:RequestID>Request(0123-0123-CAFE-BEB0)</xcpt:RequestID><!-- Ihre RequestID wird hier eingetragen, achten Sie bitte auf die Eindeutigkeit der Nummer. Dies kann helfen eine Ihrer Anfragen später zu anaylsieren -->
+					<xcpt:TimeStamp>2012-12-21T14:30:47.0Z</xcpt:TimeStamp><!-- Das aktuelle Datum, an dem die Anfrage verschickt wurde.-->
+					<xcpt:Procedure>DUA</xcpt:Procedure><!-- Der Verfahrensname -->
+					<xcpt:DataType>http://kommunikationsserver.itsg.de/meldung</xcpt:DataType><!-- Fester Wert -->
+					<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-acknowledgement</xcpt:Scenario><!-- Fester Wert -->
+				</xcpt:RequestDetails>
+				<xcpt:ResponseDetails><!-- dieser Knoten beinhaltet die Informationen der Antwort des Kommunikationsservers auf Paketebene -->
+					<xcpt:ResponseID>322149141553209702657</xcpt:ResponseID><!-- Trackingnummer des Meldungpaketes -->
+					<xcpt:TimeStamp>2001-12-17T09:30:48.0Z</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+							<xcpt:Code>I000</xcpt:Code>
+							<xcpt:Text>Paketebene erfolgreich, Paket angenommen.</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackageBody/>
+		</xres:Package>
+	</xres:TransportBody>
+</xres:Transport>

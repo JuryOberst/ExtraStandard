@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Schema module describing shared eXTra components
+    
+    @file    KomServer-components-1-common.xsd
+    @author  Sebastian Stadtmüller, ITSG GmbH
+    @version 1.4.0
+    @state   RELEASE
+    @date    2014-12-12
+    @changed 2014-12-12 Profiled for GKV-Kommunikationsserver
+
+    @file    eXTra-components-1.xsd
+    @author  [MS] Michael Schäfer, Statistisches Bundesamt
+    @version 1.4.0
+    @state   RELEASE
+    @date    2013-10-17
+    
+    @changed 2009-07-17 1.1 MS - Removed XHTML namespace
+    @changed 2010-02-21 1.2 MS + Added version '1.2'
+    @changed 2010-07-04 1.2 MS / Restricted version identifier to '1.2'
+    @changed 2010-07-12 1.2 MS / Made 'ResponseDetailsType' non-abstract
+    @changed 2011-06-17 1.3 MS / Changed type of element 'DataType' to 'xcode:DataTypeCodeType'
+    @changed 2011-09-12 1.3 MS - Set version identifiers to '1.0', 1.1', 1.3'
+    @changed 2011-09-12 1.3 MS / Set schema version to 1.3
+    @changed 2013-09-06 1.4 MS / Added xmime NS and xmime:expectedContentTypes
+                                 on Base64CharSequenceType
+    @changed 2013-10-17 1.4 MS / Set schema version to 1.4
+                               + Added version identifier '1.4'
+    
+-->
+<xs:schema xmlns="http://www.extra-standard.de/namespace/components/1" xmlns:xcode="http://www.extra-standard.de/namespace/codelists/1" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" targetNamespace="http://www.extra-standard.de/namespace/components/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4.0">
+	<xs:simpleType name="AbstractVersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9][0-9]*.[0-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SimpleClassType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="SupportedVersionsType">
+		<xs:restriction base="AbstractVersionType">
+			<xs:enumeration value="1.0"/>
+			<xs:enumeration value="1.1"/>
+			<xs:enumeration value="1.2"/>
+			<xs:enumeration value="1.3"/>
+			<xs:enumeration value="1.4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProfileIDType">
+		<xs:restriction base="SimpleURIencodableType"/>
+	</xs:simpleType>
+	<xs:simpleType name="SimpleURIencodableType">
+		<xs:restriction base="xs:anyURI"/>
+	</xs:simpleType>
+	<xs:complexType name="ClassifiableIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="class" type="SimpleClassType" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="RootElementType" abstract="true">
+		<xs:attribute name="version" type="SupportedVersionsType" use="required"/>
+		<xs:attribute name="profile" type="ProfileIDType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ReceiverType">
+		<xs:sequence>
+			<xs:element name="ReceiverID" type="BNIKClassIDType"/>
+			<xs:element ref="Name" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TextType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BNIKClassIDType">
+		<xs:annotation>
+			<xs:documentation>Klasse modeliert einen Typ eines Knotens der eine Class Attribut mit "Betriebsnummer"und "Institutonskennzeichen" hat. Es wird für Sender und Empfänger genutzt</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:restriction base="ClassifiableIDType">
+				<xs:pattern value="[0-9]{8,9}"/>
+				<xs:attribute name="class" use="optional" default="Betriebsnummer">
+					<xs:annotation>
+						<xs:documentation>Das klassifizierte Element kann vom Type "Betriebsnummer" oder "Institutionskennzeichen" sein</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="SimpleClassType">
+							<xs:enumeration value="Betriebsnummer"/>
+							<xs:enumeration value="Institutionskennzeichen"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="KomServerRootElementType" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="RootElementType">
+				<xs:attribute name="version" use="required">
+					<xs:simpleType>
+						<xs:restriction base="SupportedVersionsType">
+							<xs:enumeration value="1.4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="profile" use="required">
+					<xs:simpleType>
+						<xs:restriction base="ProfileIDType">
+							<xs:enumeration value="http://www.extra-standard.de/profile/DEUEVGKV/1.4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ElementWithOutOptionalVersionType" abstract="true">
+		<xs:attribute name="version" type="AbstractVersionType" use="prohibited"/>
+	</xs:complexType>
+	<xs:complexType name="KomServerReceiverType">
+		<xs:complexContent>
+			<xs:restriction base="ReceiverType">
+				<xs:sequence>
+					<xs:element name="ReceiverID">
+						<xs:annotation>
+							<xs:documentation>Betriebsnummer des GKV-Kommunikationsservers</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:restriction base="BNIKClassIDType">
+									<xs:enumeration value="19878051"/>
+								</xs:restriction>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="Name" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BetriebsnummerClassIDType">
+		<xs:simpleContent>
+			<xs:restriction base="ClassifiableIDType">
+				<xs:pattern value="[0-9]{8}"/>
+				<xs:attribute name="class" use="optional">
+					<xs:simpleType>
+						<xs:restriction base="SimpleClassType">
+							<xs:enumeration value="Betriebsnummer"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="Name">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:restriction base="TextType">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="100"/>
+				</xs:restriction>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

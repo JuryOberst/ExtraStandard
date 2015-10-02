@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Die Kommentare in diesem Beispiel sind vor einem produktiven Einsatz zu entfernen -->
+<xmsg:DataRequest version="1.3" xmlns:xmsg="http://www.extra-standard.de/namespace/message/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.extra-standard.de/namespace/message/1 ../xsd/xsd_KomServer_3_Body_request_anfordern_rueckmeldungen.xsd">
+	<xmsg:Query>
+		<xmsg:Argument property="http://www.extra-standard.de/property/ReceiverID">
+			<xmsg:EQ>01000232</xmsg:EQ>
+		</xmsg:Argument>
+	</xmsg:Query>
+</xmsg:DataRequest>
