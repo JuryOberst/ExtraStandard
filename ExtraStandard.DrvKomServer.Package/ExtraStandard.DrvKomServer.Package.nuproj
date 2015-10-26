@@ -47,5 +47,13 @@
     <Tags>eXTra basis definition drv dsrv komserver kommunikationsserver verfahren</Tags>
     <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>
+  <PropertyGroup>
+    <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
+  </PropertyGroup>
+  <Target Name="GetNuPkgVersion" Condition="'$(NuGetPackageVersion)' != ''">
+    <PropertyGroup>
+      <Version>$(NuGetPackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>
