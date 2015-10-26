@@ -134,6 +134,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraStandard.GkvKomServer.
 EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "ExtraStandard.GkvKomServer.Validation.Extra14.Package", "ExtraStandard.GkvKomServer.Validation.Extra14.Package\ExtraStandard.GkvKomServer.Validation.Extra14.Package.nuproj", "{40BE9FAE-314E-4A2F-A6E1-7D091592DE81}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExtraStandard.DrvKomServer", "ExtraStandard.DrvKomServer\ExtraStandard.DrvKomServer.shproj", "{A90E4382-B519-4FAD-B17A-CE9D777A57F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraStandard.DrvKomServer.Net40", "ExtraStandard.DrvKomServer.Net40\ExtraStandard.DrvKomServer.Net40.csproj", "{85C79C02-2554-4339-9655-162FE9EF1FF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraStandard.DrvKomServer.Net403", "ExtraStandard.DrvKomServer.Net403\ExtraStandard.DrvKomServer.Net403.csproj", "{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraStandard.DrvKomServer.Net45", "ExtraStandard.DrvKomServer.Net45\ExtraStandard.DrvKomServer.Net45.csproj", "{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "ExtraStandard.DrvKomServer.Package", "ExtraStandard.DrvKomServer.Package\ExtraStandard.DrvKomServer.Package.nuproj", "{07CE7801-663C-4007-9322-263A04692B08}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ExtraStandard.DrvKomServer.Validation.Extra13\ExtraStandard.DrvKomServer.Validation.Extra13.projitems*{dbcc7b89-9148-468c-959d-db3ab7b666df}*SharedItemsImports = 13
@@ -145,10 +155,14 @@ Global
 		ExtraStandard.DrvKomServer.Extra13\ExtraStandard.DrvKomServer.Extra13.projitems*{77fc3185-53a7-49e5-b2bb-8f9efaa881f3}*SharedItemsImports = 13
 		ExtraStandard\ExtraStandard.projitems*{115af0da-19c1-4e85-9569-bd1b0ba43d92}*SharedItemsImports = 4
 		ExtraStandard.Extra13\ExtraStandard.Extra13.projitems*{b5b04101-3d0c-4a34-a049-3d9d54d0dd4e}*SharedItemsImports = 4
+		ExtraStandard.DrvKomServer\ExtraStandard.DrvKomServer.projitems*{85c79c02-2554-4339-9655-162fe9ef1ff4}*SharedItemsImports = 4
 		ExtraStandard.Extra11\ExtraStandard.Extra11.projitems*{f1a63fae-61a0-44f7-a10b-2971ae0d51ba}*SharedItemsImports = 4
+		ExtraStandard.DrvKomServer\ExtraStandard.DrvKomServer.projitems*{a90e4382-b519-4fad-b17a-ce9d777a57f5}*SharedItemsImports = 13
 		ExtraStandard.GkvKomServer\ExtraStandard.GkvKomServer.projitems*{9f54cdfb-d810-4b8a-8f7c-903e796b3aa9}*SharedItemsImports = 4
 		ExtraStandard.GkvKomServer\ExtraStandard.GkvKomServer.projitems*{daf6f5f4-bef3-45c7-9f0a-bdd3c9840cf6}*SharedItemsImports = 4
+		ExtraStandard.DrvKomServer\ExtraStandard.DrvKomServer.projitems*{e8ec36a2-f192-49a6-8a3d-fb8caec145c6}*SharedItemsImports = 4
 		ExtraStandard\ExtraStandard.projitems*{4a7ed0b3-8285-4342-807f-32f69186c5be}*SharedItemsImports = 13
+		ExtraStandard.DrvKomServer\ExtraStandard.DrvKomServer.projitems*{0eabbf06-bad2-4bc2-99cd-48aa80df199b}*SharedItemsImports = 4
 		ExtraStandard.Extra11\ExtraStandard.Extra11.projitems*{99c9c691-cb04-442f-bc2e-519b63468cac}*SharedItemsImports = 4
 		ExtraStandard.Extra11\ExtraStandard.Extra11.projitems*{7906794f-3120-42ac-9134-42901986449c}*SharedItemsImports = 4
 		ExtraStandard.Extra13\ExtraStandard.Extra13.projitems*{28587300-a615-43ca-a23c-83b526d8e4ed}*SharedItemsImports = 13
@@ -328,6 +342,22 @@ Global
 		{40BE9FAE-314E-4A2F-A6E1-7D091592DE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40BE9FAE-314E-4A2F-A6E1-7D091592DE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40BE9FAE-314E-4A2F-A6E1-7D091592DE81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85C79C02-2554-4339-9655-162FE9EF1FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C79C02-2554-4339-9655-162FE9EF1FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C79C02-2554-4339-9655-162FE9EF1FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C79C02-2554-4339-9655-162FE9EF1FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07CE7801-663C-4007-9322-263A04692B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CE7801-663C-4007-9322-263A04692B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CE7801-663C-4007-9322-263A04692B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CE7801-663C-4007-9322-263A04692B08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -391,5 +421,10 @@ Global
 		{622321F7-3522-4912-B563-785F6424FF79} = {791D4895-D63A-4BC0-A636-6163CD96325D}
 		{5C086BB4-A763-4879-81B0-DB7C25C6FF70} = {791D4895-D63A-4BC0-A636-6163CD96325D}
 		{40BE9FAE-314E-4A2F-A6E1-7D091592DE81} = {791D4895-D63A-4BC0-A636-6163CD96325D}
+		{A90E4382-B519-4FAD-B17A-CE9D777A57F5} = {BF2E9579-FEBB-47B8-AF47-9561FDFB5DED}
+		{85C79C02-2554-4339-9655-162FE9EF1FF4} = {BF2E9579-FEBB-47B8-AF47-9561FDFB5DED}
+		{0EABBF06-BAD2-4BC2-99CD-48AA80DF199B} = {BF2E9579-FEBB-47B8-AF47-9561FDFB5DED}
+		{E8EC36A2-F192-49A6-8A3D-FB8CAEC145C6} = {BF2E9579-FEBB-47B8-AF47-9561FDFB5DED}
+		{07CE7801-663C-4007-9322-263A04692B08} = {BF2E9579-FEBB-47B8-AF47-9561FDFB5DED}
 	EndGlobalSection
 EndGlobal
