@@ -154,6 +154,7 @@ namespace ExtraStandard.Tests.Extra14
 
         [Theory]
         [InlineData("Custom.KomServer-Statusanfrage-Request-withProhibitedAttribute.xml")]
+        [InlineData("Custom.invalid-01.xml")]
         public void TestFailure(string resourceName)
         {
             var data = LoadData(resourceName);

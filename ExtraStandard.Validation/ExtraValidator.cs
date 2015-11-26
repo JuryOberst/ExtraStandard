@@ -78,24 +78,27 @@ namespace ExtraStandard.Validation
         {
             XDocument result = CopyXmlDocument(doc);
             var nsXsi = XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance");
-            if (doc.Root != null)
+            if (result.Root != null)
             {
-                if (string.IsNullOrEmpty(doc.Root.Name.NamespaceName))
+                if (result.Root.Attribute(XNamespace.Xmlns + "xsi") == null)
+                    result.Root.SetAttributeValue(XNamespace.Xmlns + "xsi", nsXsi);
+
+                if (string.IsNullOrEmpty(result.Root.Name.NamespaceName))
                 {
-                    if (doc.Root.Attribute(nsXsi + "noNamespaceSchemaLocation") == null)
+                    if (result.Root.Attribute(nsXsi + "noNamespaceSchemaLocation") == null)
                     {
                         var schemaUri = new Uri(resolver.RootUrl, schemaFileName);
                         var schemaLocation = schemaUri.ToString();
-                        doc.Root.SetAttributeValue(nsXsi + "noNamespaceSchemaLocation", schemaLocation);
+                        result.Root.SetAttributeValue(nsXsi + "xsi:noNamespaceSchemaLocation", schemaLocation);
                     }
                 }
                 else
                 {
-                    if (doc.Root.Attribute(nsXsi + "schemaLocation") == null)
+                    if (result.Root.Attribute(nsXsi + "schemaLocation") == null)
                     {
                         var schemaUri = new Uri(resolver.RootUrl, schemaFileName);
-                        var schemaLocation = string.Format("{1} {0}", schemaUri, doc.Root.Name.NamespaceName);
-                        doc.Root.SetAttributeValue(nsXsi + "schemaLocation", schemaLocation);
+                        var schemaLocation = string.Format("{1} {0}", schemaUri, result.Root.Name.NamespaceName);
+                        result.Root.SetAttributeValue(nsXsi + "schemaLocation", schemaLocation);
                     }
                 }
             }
