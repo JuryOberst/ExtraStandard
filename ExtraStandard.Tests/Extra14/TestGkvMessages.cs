@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml.Schema;
 
 using ExtraStandard.Extra14;
 using ExtraStandard.GkvKomServer.Validation.Extra14;
@@ -149,6 +150,17 @@ namespace ExtraStandard.Tests.Extra14
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
+        }
+
+        [Theory]
+        [InlineData("Custom.KomServer-Statusanfrage-Request-withProhibitedAttribute.xml")]
+        public void TestFailure(string resourceName)
+        {
+            var data = LoadData(resourceName);
+            var document = ExtraUtilities.Deserialize<TransportRequestType>(data);
+            Assert.NotNull(document);
+            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Request);
+            Assert.Throws<XmlSchemaValidationException>(() => validator.Validate(data));
         }
 
         private static byte[] LoadData(string resourceName)

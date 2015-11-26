@@ -161,6 +161,9 @@
     <EmbeddedResource Include="Resources\Extra14\Gkv\KomServer-Statusanfrage-Response-NurNormaleRueckmeldungen-withOptional.xml" />
     <EmbeddedResource Include="Resources\Extra14\Gkv\KomServer-Statusanfrage-Response-NurNormaleRueckmeldungen-withoutOptional.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Extra14\Gkv\Custom\KomServer-Statusanfrage-Request-withProhibitedAttribute.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
