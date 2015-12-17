@@ -48,5 +48,13 @@
     <Tags>eXTra standard 1.4 DRV DSRV Kommunikationsserver Rentenversicherung Deutsche Sofortmeldung</Tags>
     <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>
+  <PropertyGroup>
+    <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
+  </PropertyGroup>
+  <Target Name="GetNuPkgVersion" Condition="'$(NuGetPackageVersion)' != ''">
+    <PropertyGroup>
+      <Version>$(NuGetPackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>
