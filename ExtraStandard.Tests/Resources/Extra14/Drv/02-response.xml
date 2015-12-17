@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xres:Transport version="1.4" profile="http://www.altova.com" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 eXTra-response-1.xsd" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xplg="http://www.extra-standard.de/namespace/plugins/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xres:TransportHeader>
+		<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>SofoReq-115</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-18T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>SofoSoftware</xcpt:Product>
+				<xcpt:Manufacturer>SofoSoftwareHersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>http://www.extra-standard.de/procedures/DEUEV</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+			<!-- Optionale Angabe -->
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails>
+			<xcpt:ResponseID>1450427460</xcpt:ResponseID>
+			<xcpt:TimeStamp>2015-12-18T09:31:00Z</xcpt:TimeStamp>
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>E98</xcpt:Code>
+					<xcpt:Text>Anfrage erfolgreich</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody>
+		<xres:Package>
+			<xres:PackageHeader>
+				<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>SofoReq-115</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-18T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>SofoSoftware</xcpt:Product>
+				<xcpt:Manufacturer>SofoSoftwareHersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>http://www.extra-standard.de/procedures/DEUEV</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+		</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>363382</xcpt:ResponseID>
+					<xcpt:TimeStamp>2001-12-17T10:30:47Z</xcpt:TimeStamp>
+						<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+							<xcpt:Code>000</xcpt:Code>
+							<xcpt:Text>Daten wurden erfolgreich verarbeitet</xcpt:Text>
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackagePlugIns><xplg:Contacts>
+			<xplg:SenderContact>
+				<xplg:Endpoint type="SMTP">Ansprechpartner@testadresse.de</xplg:Endpoint><!-- Ihre E-Mail Adresse -->
+			</xplg:SenderContact>
+		</xplg:Contacts>
+		<xplg:DataTransforms>
+			<xplg:Compression order="1">
+				<xplg:Algorithm id="http://www.extra-standard.de/transforms/compression/ZIP"/><!-- die Id gibt an, welcher Kompressionsalgorithmus eingesetzt wurde -->
+				<xplg:InputData bytes="1349"/><!-- Die Größe der Nutzdaten vor der Kompression -->
+			</xplg:Compression>
+			<xplg:Encryption order="2">
+				<xplg:Algorithm id="http://www.extra-standard.de/transforms/encryption/PKCS7"/><!-- Fester Wert -->
+				<xplg:OutputData bytes="4223"/><!-- Die Größe der Nutzdaten nach der Verschlüsselung  -->
+			</xplg:Encryption>
+		</xplg:DataTransforms>
+		<xplg:DataSource>
+			<xplg:DataContainer type="http://www.extra-standard.de/container/FILE" created="2012-12-21T10:20:11.0Z" encoding="I1" name="EDUA0000001"/><!-- Beschreibung der Nutzdaten und ihrer Metadaten-->
+		</xplg:DataSource>
+		</xres:PackagePlugIns>
+			<xres:PackageBody>
+				<xcpt:Data>
+					<xcpt:Base64CharSequence><!-- Verarbeitungsbestätigung --></xcpt:Base64CharSequence>
+				</xcpt:Data>
+			</xres:PackageBody>
+		</xres:Package>
+		<xres:Package>
+			<xres:PackageHeader>
+				<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>SofoReq-115</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-18T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>SofoSoftware</xcpt:Product>
+				<xcpt:Manufacturer>SofoSoftwareHersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>http://www.extra-standard.de/procedures/DEUEV</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+		</xcpt:RequestDetails>
+				<xcpt:ResponseDetails>
+					<xcpt:ResponseID>363385</xcpt:ResponseID>
+					<xcpt:TimeStamp>2001-12-17T09:30:47Z</xcpt:TimeStamp>
+					<xcpt:Report highestWeight="http://www.extra-standard.de/weight/ERROR">
+						<xcpt:Flag weight="http://www.extra-standard.de/weight/ERROR" >
+							<xcpt:Code>E92</xcpt:Code>
+							<xcpt:Text>Fehler bei der Entschlüsselung</xcpt:Text>						
+						</xcpt:Flag>
+					</xcpt:Report>
+				</xcpt:ResponseDetails>
+			</xres:PackageHeader>
+			<xres:PackageBody/>
+		</xres:Package>
+	</xres:TransportBody>
+</xres:Transport>

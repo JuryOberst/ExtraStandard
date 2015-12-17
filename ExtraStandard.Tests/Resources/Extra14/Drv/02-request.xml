@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xreq:Transport version="1.4" profile="http://www.extra-standard.de/profile/DEUEV/1.4" xsi:schemaLocation="http://www.extra-standard.de/namespace/request/1 eXTra-request-1.xsd" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xreq="http://www.extra-standard.de/namespace/request/1" xmlns:xmsg="http://www.extra-standard.de/namespace/message/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xreq:TransportHeader>
+		<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>SofoReq-115</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-18T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>SofoSoftware</xcpt:Product>
+				<xcpt:Manufacturer>SofoSoftwareHersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>http://www.extra-standard.de/procedures/DEUEV</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+			<!-- Optionale Angabe -->
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+		</xcpt:RequestDetails>
+	</xreq:TransportHeader>
+	<xreq:TransportBody>
+		<xcpt:Data>
+			<xcpt:ElementSequence>
+				<!-- Query zur Abfrage von Verarbeitungsergebnissen -->
+				<xmsg:DataRequest>	
+					<xmsg:Query>
+						<xmsg:Argument property="http://www.extra-standard.de/property/ResponseID">
+							<xmsg:GT>363000</xmsg:GT>
+						</xmsg:Argument>
+						<xmsg:Argument property="http://www.extra-standard.de/property/Procedure">
+							<xmsg:EQ>DUA</xmsg:EQ>
+						</xmsg:Argument>
+					</xmsg:Query>
+					<xmsg:Control>
+						<xmsg:MaximumPackages>10</xmsg:MaximumPackages>
+					</xmsg:Control>
+				</xmsg:DataRequest>
+			</xcpt:ElementSequence>
+		</xcpt:Data>
+	</xreq:TransportBody>
+</xreq:Transport>

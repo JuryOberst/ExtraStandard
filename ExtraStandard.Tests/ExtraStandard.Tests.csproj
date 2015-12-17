@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Extra11\TestXmlError.cs" />
     <Compile Include="Extra14\TestError.cs" />
+    <Compile Include="Extra14\TestDrvMessages.cs" />
     <Compile Include="Extra14\TestGkvMessages.cs" />
     <Compile Include="Extra14\TestPlugins.cs" />
     <Compile Include="Extra14\TestTransports.cs" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\ExtraStandard.DrvKomServer.Validation.Extra13.Net40\ExtraStandard.DrvKomServer.Validation.Extra13.Net40.csproj">
       <Project>{f878df29-78a8-45f8-aea1-2944a78d05d0}</Project>
       <Name>ExtraStandard.DrvKomServer.Validation.Extra13.Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExtraStandard.DrvKomServer.Validation.Extra14.Net40\ExtraStandard.DrvKomServer.Validation.Extra14.Net40.csproj">
+      <Project>{139dc37f-f245-41d5-8a5d-95e7296a285b}</Project>
+      <Name>ExtraStandard.DrvKomServer.Validation.Extra14.Net40</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExtraStandard.Extra11.Portable.Net45\ExtraStandard.Extra11.Portable.Net45.csproj">
       <Project>{f1a63fae-61a0-44f7-a10b-2971ae0d51ba}</Project>
@@ -166,6 +171,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Extra14\Gkv\Custom\invalid-01.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Extra14\Drv\01-request.xml" />
+    <EmbeddedResource Include="Resources\Extra14\Drv\01-response.xml" />
+    <EmbeddedResource Include="Resources\Extra14\Drv\02-request.xml" />
+    <EmbeddedResource Include="Resources\Extra14\Drv\02-response.xml" />
+    <EmbeddedResource Include="Resources\Extra14\Drv\03-request.xml" />
+    <EmbeddedResource Include="Resources\Extra14\Drv\03-response.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

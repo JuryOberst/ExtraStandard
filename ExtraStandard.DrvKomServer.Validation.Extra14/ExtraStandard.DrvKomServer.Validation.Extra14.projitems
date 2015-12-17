@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c7655aa7-96bd-4402-a113-91f8040cfca6</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ExtraStandard.DrvKomServer.Validation.Extra14</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DrvExtraValidationResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrvExtraValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\eXTra-messages-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\eXTra-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\eXTra-messages-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\eXTra-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\eXTra-response-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\eXTra-plugins-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\eXTra-request-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\eXTra-codelists-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\eXTra-components-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\eXTra-error-1.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\eXTra-response-1.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\request\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataAcknowledge\response\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\request\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataResponse\response\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\request\xmldsig-core-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\xenc-schema.xsd" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Schemas\DataSupply\response\xmldsig-core-schema.xsd" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xres:Transport version="1.4" profile="http://www.extra-standard.de/profile/DEUEV/1.4" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 eXTra-response-1.xsd" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xres:TransportHeader>
+		<xcpt:TestIndicator>http://www.extra-standard.de/test/NONE</xcpt:TestIndicator>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>Sofo-114</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-17T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>SofoSoftware</xcpt:Product>
+				<xcpt:Manufacturer>SofoSoftwareHersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>http://www.extra-standard.de/procedures/DEUEV</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/Sofortmeldung</xcpt:DataType>
+			<!-- Optionale Angabe -->
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-acknowledgement</xcpt:Scenario>
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails>
+			<xcpt:ResponseID>363382</xcpt:ResponseID>
+			<xcpt:TimeStamp>2015-12-17T09:31:47Z</xcpt:TimeStamp>
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>C00</xcpt:Code>
+					<xcpt:Text>Die Nachricht entspricht dem gefor-derten Aufbau und kann im Fachverfahren verarbeitet werden</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody/>
+</xres:Transport>
