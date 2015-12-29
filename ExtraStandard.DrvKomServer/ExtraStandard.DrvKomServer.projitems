@@ -9,7 +9,6 @@
     <Import_RootNamespace>ExtraStandard.DrvKomServer</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ExtraProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtraTransportProcedure.cs" />
   </ItemGroup>
 </Project>

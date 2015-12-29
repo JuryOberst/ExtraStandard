@@ -9,6 +9,7 @@
     <Import_RootNamespace>ExtraStandard.DrvKomServer.Extra14</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ExtraProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XmlErrorType.cs" />
   </ItemGroup>
 </Project>

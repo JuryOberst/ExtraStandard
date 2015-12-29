@@ -1,4 +1,4 @@
-﻿namespace ExtraStandard.DrvKomServer
+﻿namespace ExtraStandard.DrvKomServer.Extra13
 {
     /// <summary>
     /// Zu verwendendes eXTra-Profil
