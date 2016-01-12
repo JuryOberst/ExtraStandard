@@ -19,7 +19,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtraStandard.DrvKomServer.Extra14.Net40\ExtraStandard.DrvKomServer.Extra14.Net40.csproj" />
+    <ProjectReference Include="..\ExtraStandard.DrvKomServer.Validation.Extra14.Net40\ExtraStandard.DrvKomServer.Validation.Extra14.Net40.csproj" />
     <ProjectReference Include="..\ExtraStandard.Validation.Package\ExtraStandard.Validation.Package.nuproj" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -36,7 +36,7 @@
     <Authors>DATALINE GmbH &amp; Co. KG</Authors>
     <Owners>DATALINE GmbH &amp; Co. KG</Owners>
     <Summary>Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)</Summary>
-    <Description>Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)</Description>
+    <Description>Validierungen von eXTra 1.4-Dokumenten für das Sofortmeldungsverfahren</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>
