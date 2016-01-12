@@ -28,6 +28,7 @@
     <DefineConstants>TRACE;HAS_FULL_TYPE;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ExtraStandard.DrvKomServer.Validation.Extra14.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
