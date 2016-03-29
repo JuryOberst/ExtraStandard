@@ -5055,11 +5055,11 @@ namespace ExtraStandard.Extra11
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.extra-standard.de/namespace/message/1")]
     public partial class DataRequestArgumentType : AbstractArgumentType {
         
-        private DataRequestPropertyNamesType propertyField;
+        private string propertyField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public DataRequestPropertyNamesType property {
+        public string property {
             get {
                 return this.propertyField;
             }
@@ -5076,35 +5076,29 @@ namespace ExtraStandard.Extra11
 #endif
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.extra-standard.de/namespace/message/1")]
-    public enum DataRequestPropertyNamesType {
-        
+    public static class DataRequestPropertyNamesType
+    {
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/SenderID")]
-        httpwwwextrastandarddepropertySenderID,
-        
+        public static readonly string httpwwwextrastandarddepropertySenderID = "http://www.extra-standard.de/property/SenderID";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/ReceiverID")]
-        httpwwwextrastandarddepropertyReceiverID,
-        
+        public static readonly string httpwwwextrastandarddepropertyReceiverID = "http://www.extra-standard.de/property/ReceiverID";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/Procedure")]
-        httpwwwextrastandarddepropertyProcedure,
-        
+        public static readonly string httpwwwextrastandarddepropertyProcedure = "http://www.extra-standard.de/property/Procedure";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/DataType")]
-        httpwwwextrastandarddepropertyDataType,
-        
+        public static readonly string httpwwwextrastandarddepropertyDataType = "http://www.extra-standard.de/property/DataType";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/ResponseID")]
-        httpwwwextrastandarddepropertyResponseID,
-        
+        public static readonly string httpwwwextrastandarddepropertyResponseID = "http://www.extra-standard.de/property/ResponseID";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/ResponseCreationTimeStamp")]
-        httpwwwextrastandarddepropertyResponseCreationTimeStamp,
-        
+        public static readonly string httpwwwextrastandarddepropertyResponseCreationTimeStamp = "http://www.extra-standard.de/property/ResponseCreationTimeStamp";
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("http://www.extra-standard.de/property/ResponseFileName")]
-        httpwwwextrastandarddepropertyResponseFileName,
+        public static readonly string httpwwwextrastandarddepropertyResponseFileName = "http://www.extra-standard.de/property/ResponseFileName";
     }
     
     /// <remarks/>
