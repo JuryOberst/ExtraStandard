@@ -130,13 +130,8 @@
     -->
     <xs:simpleType name="DataRequestPropertyNamesType">
         <xs:restriction base="PropertyNamesType">
-            <xs:enumeration value="http://www.extra-standard.de/property/SenderID"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/ReceiverID"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/Procedure"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/DataType"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/ResponseID"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/ResponseCreationTimeStamp"/>
-            <xs:enumeration value="http://www.extra-standard.de/property/ResponseFileName"/>
+            <xs:pattern value="http://www.extra-standard.de/property/(SenderID|ReceiverID|Procedure|DataType|ResponseID|ResponseCreationTimeStamp|ResponseFileName)"/>
+            <xs:pattern value=".+"/>
         </xs:restriction>
     </xs:simpleType>
 
