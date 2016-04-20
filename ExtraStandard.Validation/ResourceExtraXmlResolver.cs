@@ -54,7 +54,7 @@ namespace ExtraStandard.Validation
         /// <returns></returns>
         public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)
         {
-            var ressourceName = absoluteUri.AbsolutePath.TrimStart('/').Replace("/", ".");
+            var ressourceName = absoluteUri.GetComponents(UriComponents.Path, UriFormat.Unescaped).TrimStart('/').Replace("/", ".");
             var stream = _resourceAssembly.GetManifestResourceStream(ressourceName);
             if (stream == null)
                 throw new System.Xml.Schema.XmlSchemaException($"Schema from resource {absoluteUri} not found.");
