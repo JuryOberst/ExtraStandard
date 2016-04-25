@@ -1,0 +1,86 @@
+{
+  "name": "Dataline.ExtraStandard",
+  "version": "1.0.0-*",
+  "title": "eXTra-Standard-Basisdefinitionen",
+  "authors": [ "DATALINE GmbH & Co. KG" ],
+  "owners": [ "DATALINE GmbH & Co. KG" ],
+  "summary": "Basis-Definitionen für den eXTra-Standard",
+  "description": "Basis-Definitionen für den eXTra-Standard",
+  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+  "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
+  "tags": [ "eXTra", "standard", "basis" ],
+  "configurations": {
+    "Debug": {
+      "compilationOptions": {
+        "define": [ "DEBUG" ],
+        "debugType": "portable"
+      }
+    },
+    "Release": {
+      "compilationOptions": {
+        "debugType": "none",
+        "xmlDoc": true
+      }
+    }
+  },
+  "compilationOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk"
+  },
+  "packInclude": {
+    "/": "../../*.md"
+  },
+  "compile": [ "../../GlobalAssemblyInfo.cs" ],
+  "dependencies": { },
+  "frameworks": {
+    "netstandard1.3": {
+      "dependencies": {
+        "NETStandard.Library": "1.0.0-*",
+        "System.Xml.XmlSerializer": {
+          "version" : "4.0.11-*"
+        }
+      }
+    },
+    "net40": {
+      "compilationOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "4.0.0",
+        "System.Xml.Linq": "4.0.0"
+      }
+    },
+    ".NETPortable,Version=v4.5,Profile=Profile259": {
+      "compilationOptions": {
+        "define": [ "PCL" ]
+      },
+      "frameworkAssemblies": {
+        "System": "*",
+        "System.Runtime": "*",
+        "System.Diagnostics.Tools": "*",
+        "System.Xml.XmlSerializer": "*",
+        "System.Linq": "*",
+        "System.Text.Encoding": "*",
+        "System.Xml.Linq": "*",
+        "System.Collections": "*",
+        "System.Xml.XDocument": "*",
+        "System.Reflection": "*",
+        "System.Threading": "*",
+        "System.IO": "*",
+        "System.Xml.ReaderWriter": "*"
+      }
+    },
+    ".NETPortable,Version=v4.0,Profile=Profile336": {
+      "compilationOptions": {
+        "define": [ "HAS_FULL_TYPE", "PCL" ]
+      },
+      "frameworkAssemblies": {
+        "mscorlib": "*",
+        "System": "*",
+        "System.Core": "*",
+        "System.Xml": "*",
+        "System.Xml.Linq": "*",
+        "System.Xml.Serialization": "*"
+      }
+    }
+  }
+}
