@@ -10,8 +10,7 @@
   "configurations": {
     "Debug": {
       "compilationOptions": {
-        "define": [ "DEBUG" ],
-        "debugType": "portable"
+        "define": [ "DEBUG" ]
       }
     },
     "Release": {
