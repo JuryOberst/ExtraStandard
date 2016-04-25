@@ -1,0 +1,49 @@
+{
+  "name": "Dataline.ExtraStandard.Validation.Extra11",
+  "version": "1.0.0-*",
+  "title": "Validierungen von eXTra 1.1-Dokumenten",
+  "authors": [ "DATALINE GmbH & Co. KG" ],
+  "owners": [ "DATALINE GmbH & Co. KG" ],
+  "summary": "Validierungen von eXTra 1.1-Dokumenten",
+  "description": "Validierungen von eXTra 1.1-Dokumenten",
+  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+  "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
+  "tags": [ "eXTra", "standard", "1.1", "validierung", "validation" ],
+  "configurations": {
+    "Debug": {
+      "compilationOptions": {
+        "define": [ "DEBUG" ],
+        "debugType": "portable"
+      }
+    },
+    "Release": {
+      "compilationOptions": {
+        "debugType": "none",
+        "xmlDoc": true
+      }
+    }
+  },
+  "compilationOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk"
+  },
+  "packInclude": {
+    "/": "../../*.md"
+  },
+  "compile": [ "../../GlobalAssemblyInfo.cs" ],
+  "dependencies": {
+    "Dataline.ExtraStandard": "*",
+    "Dataline.ExtraStandard.Extra11": "*",
+    "Dataline.ExtraStandard.Validation": "*"
+  },
+  "frameworks": {
+    "net40": {
+      "compilationOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "*",
+        "System.Xml.Linq": "*"
+      }
+    }
+  }
+}

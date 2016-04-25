@@ -1,0 +1,91 @@
+{
+  "name": "Dataline.ExtraStandard.DrvKomServer.Extra14",
+  "version": "1.0.0-*",
+  "title": "eXTra-Standard 1.4 (DRV-Kommunikationsserver)",
+  "authors": [ "DATALINE GmbH & Co. KG" ],
+  "owners": [ "DATALINE GmbH & Co. KG" ],
+  "summary": "Definitionen für den eXTra-Standard 1.4 (DRV-Kommunikationsserver)",
+  "description": "Definitionen für den eXTra-Standard 1.4 (DRV-Kommunikationsserver)",
+  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+  "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
+  "tags": [ "eXTra", "standard", "1.4", "definition", "DRV", "DSRV", "komserver", "kommunikationsserver", "verfahren", "rentenversicherung", "deutsche", "sofortmeldung" ],
+  "configurations": {
+    "Debug": {
+      "compilationOptions": {
+        "define": [ "DEBUG" ],
+        "debugType": "portable"
+      }
+    },
+    "Release": {
+      "compilationOptions": {
+        "debugType": "none",
+        "xmlDoc": true
+      }
+    }
+  },
+  "compilationOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk"
+  },
+  "packInclude": {
+    "/": "../../*.md"
+  },
+  "compile": [ "../../GlobalAssemblyInfo.cs" ],
+  "resource": [
+    "Schemas/**/*.xsd"
+  ],
+  "dependencies": {
+    "Dataline.ExtraStandard.Extra14": "*"
+  },
+  "frameworks": {
+    "netstandard1.3": {
+      "dependencies": {
+        "NETStandard.Library": "1.0.0-*",
+        "System.Xml.XmlSerializer": "4.0.11-*"
+      }
+    },
+    "net40": {
+      "compilationOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "*",
+        "System.Xml.Linq": "*"
+      }
+    },
+    ".NETPortable,Version=v4.5,Profile=Profile259": {
+      "compilationOptions": {
+        "define": [ "PCL" ]
+      },
+      "frameworkAssemblies": {
+        "System": "*",
+        "System.Runtime": "*",
+        "System.Diagnostics.Tools": "*",
+        "System.Xml.XmlSerializer": "*",
+        "System.Linq": "*",
+        "System.Text.Encoding": "*",
+        "System.Xml.Linq": "*",
+        "System.Collections": "*",
+        "System.Xml.XDocument": "*",
+        "System.Reflection": "*",
+        "System.Threading": "*",
+        "System.IO": "*",
+        "System.Xml.ReaderWriter": "*",
+        "System.ObjectModel": "*",
+        "System.Diagnostics.Debug": "*"
+      }
+    },
+    ".NETPortable,Version=v4.0,Profile=Profile336": {
+      "compilationOptions": {
+        "define": [ "HAS_FULL_TYPE", "PCL" ]
+      },
+      "frameworkAssemblies": {
+        "mscorlib": "*",
+        "System": "*",
+        "System.Core": "*",
+        "System.Xml": "*",
+        "System.Xml.Linq": "*",
+        "System.Xml.Serialization": "*"
+      }
+    }
+  }
+}
