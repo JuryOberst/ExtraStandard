@@ -1,6 +1,6 @@
 # Bibliotheken für den eXTra-Standard
 
-[![Build-Status](https://img.shields.io/teamcity/https/build.service-dataline.de:8081/s/Elster_ReleaseBuildNetCore.svg?label=TeamCity)](https://build.service-dataline.de:8081/viewType.html?buildTypeId=Elster_ReleaseBuildNetCore&guest=1)
+[![Build-Status](https://img.shields.io/teamcity/https/build.service-dataline.de:8081/s/OpenSource_EXTraStandardNetCore.svg?label=TeamCity)](https://build.service-dataline.de:8081/viewType.html?buildTypeId=OpenSource_EXTraStandardNetCore&guest=1)
 
 Bibliotheken für das Erstellen und Verarbeiten von eXTra-Dokumenten.
 
