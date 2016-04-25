@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0-*",
+  "title": "eXTra-Standard-Tests",
+  "authors": [ "DATALINE GmbH & Co. KG" ],
+  "owners": [ "DATALINE GmbH & Co. KG" ],
+  "summary": "Tests für den eXTra-Standard",
+  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+  "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
+  "tags": [ "eXTra", "standard", "test", "tests" ],
+  "configurations": {
+    "Debug": {
+      "compilationOptions": {
+        "define": [ "DEBUG" ],
+        "debugType": "portable"
+      }
+    },
+    "Release": {
+      "compilationOptions": {
+        "debugType": "none"
+      }
+    }
+  },
+  "compilationOptions": {
+    "keyFile": "../../dataliNe.exTrastandard.snk",
+    "nowarn": [ "CS3016" ]
+  },
+  "compile": [ "../../GlobalAssemblyInfo.cs" ],
+  "resource": [
+    "Resources/**/*"
+  ],
+  "dependencies": {
+    "ExtraStandard": "*",
+    "ExtraStandard.DrvKomServer.Validation.Extra13": "*",
+    "ExtraStandard.DrvKomServer.Validation.Extra14": "*",
+    "ExtraStandard.GkvKomServer.Validation.Extra13": "*",
+    "ExtraStandard.GkvKomServer.Validation.Extra14": "*",
+    "ExtraStandard.Validation.Extra11": "*",
+    "ExtraStandard.Validation.Extra13": "*",
+    "ExtraStandard.Validation.Extra14": "*",
+    "xunit": "2.1.0-*",
+	  "dotnet-test-xunit": "1.0.0-rc2-*",
+	  "Microsoft.NETCore.Platforms": "1.0.1-rc2-*"
+  },
+  "frameworks": {
+    "net461": {
+	    "dependencies": {
+	    },
+      "frameworkAssemblies": {
+        "System.Xml": "*",
+        "System.Xml.Linq": "*",
+        "System.Runtime": "*",
+        "System.Threading.Tasks": "*"
+      }
+    }
+  },
+  "testRunner": "xunit"
+}
