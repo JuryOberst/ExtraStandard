@@ -89,7 +89,7 @@ namespace ExtraStandard.Validation
                     {
                         var schemaUri = new Uri(resolver.RootUrl, schemaFileName);
                         var schemaLocation = schemaUri.ToString();
-                        result.Root.SetAttributeValue(nsXsi + "xsi:noNamespaceSchemaLocation", schemaLocation);
+                        result.Root.SetAttributeValue(nsXsi + "noNamespaceSchemaLocation", schemaLocation);
                     }
                 }
                 else
