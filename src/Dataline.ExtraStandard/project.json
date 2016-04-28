@@ -53,19 +53,19 @@
         "define": [ "PCL" ]
       },
       "frameworkAssemblies": {
-        "System": "*",
-        "System.Runtime": "*",
-        "System.Diagnostics.Tools": "*",
-        "System.Xml.XmlSerializer": "*",
-        "System.Linq": "*",
-        "System.Text.Encoding": "*",
-        "System.Xml.Linq": "*",
-        "System.Collections": "*",
-        "System.Xml.XDocument": "*",
-        "System.Reflection": "*",
-        "System.Threading": "*",
-        "System.IO": "*",
-        "System.Xml.ReaderWriter": "*"
+        "System":  { "type": "build" },
+        "System.Runtime": { "type": "build" },
+        "System.Diagnostics.Tools": { "type": "build" },
+        "System.Xml.XmlSerializer": { "type": "build" },
+        "System.Linq": { "type": "build" },
+        "System.Text.Encoding": { "type": "build" },
+        "System.Xml.Linq": { "type": "build" },
+        "System.Collections": { "type": "build" },
+        "System.Xml.XDocument": { "type": "build" },
+        "System.Reflection": { "type": "build" },
+        "System.Threading": { "type": "build" },
+        "System.IO": { "type": "build" },
+        "System.Xml.ReaderWriter": { "type": "build" },
       }
     },
     ".NETPortable,Version=v4.0,Profile=Profile336": {
@@ -73,12 +73,12 @@
         "define": [ "HAS_FULL_TYPE", "PCL" ]
       },
       "frameworkAssemblies": {
-        "mscorlib": "*",
-        "System": "*",
-        "System.Core": "*",
-        "System.Xml": "*",
-        "System.Xml.Linq": "*",
-        "System.Xml.Serialization": "*"
+        "mscorlib": { "type": "build" },
+        "System": { "type": "build" },
+        "System.Core": { "type": "build" },
+        "System.Xml": { "type": "build" },
+        "System.Xml.Linq": { "type": "build" },
+        "System.Xml.Serialization": { "type": "build" },
       }
     }
   }
