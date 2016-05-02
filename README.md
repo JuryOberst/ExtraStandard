@@ -13,7 +13,8 @@ und wurde bereitgestellt von:
 
 # Version 0.3.0
 
-* Unterstützung für .NET Core (netframework1.3)
+* Unterstützung für .NET Core (netstandard1.3)
+  * Validierung funktioniert weiterhin nur unter .NET 4.0 oder vollständig kompatiblen Frameworks
 * Massive Vereinfachung des Archivs
 
 # Version 0.1.8
