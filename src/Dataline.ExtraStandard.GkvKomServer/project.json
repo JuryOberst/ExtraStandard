@@ -3,32 +3,40 @@
   "version": "1.0.0-*",
   "title": "eXTra-Basis-Definitionen (GKV-Kommunikationsserver)",
   "authors": [ "DATALINE GmbH & Co. KG" ],
-  "owners": [ "DATALINE GmbH & Co. KG" ],
-  "summary": "eXTra-Basis-Definitionen (GKV-Kommunikationsserver)",
   "description": "eXTra-Basis-Definitionen für das GKV-Kommunikationsserver-Verfahren",
-  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
   "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
-  "tags": [ "eXTra", "standard", "basis", "definition", "GKV", "komserver", "kommunikationsserver", "verfahren" ],
   "configurations": {
     "Debug": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "DEBUG" ]
       }
     },
     "Release": {
-      "compilationOptions": {
+      "buildOptions": {
         "debugType": "none",
         "xmlDoc": true
       }
     }
   },
-  "compilationOptions": {
-    "keyFile": "../../Dataline.ExtraStandard.snk"
+  "buildOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk",
+    "compile": [ "../../GlobalAssemblyInfo.cs" ]
   },
-  "packInclude": {
-    "/": "../../*.md"
+  "packOptions": {
+    "summary": "eXTra-Basis-Definitionen (GKV-Kommunikationsserver)",
+    "owners": [ "DATALINE GmbH & Co. KG" ],
+    "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+    "tags": [ "eXTra", "standard", "basis", "definition", "GKV", "komserver", "kommunikationsserver", "verfahren" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/dataline-gmbh/ExtraStandard"
+    },
+    "files": {
+      "mappings": {
+        "/": "../../*.md"
+      }
+    }
   },
-  "compile": [ "../../GlobalAssemblyInfo.cs" ],
   "dependencies": {
     "Dataline.ExtraStandard": "*"
   },
@@ -39,12 +47,12 @@
       }
     },
     "net40": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       }
     },
     ".NETPortable,Version=v4.5,Profile=Profile259": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "PCL" ]
       },
       "frameworkAssemblies": {
@@ -52,7 +60,7 @@
       }
     },
     ".NETPortable,Version=v4.0,Profile=Profile336": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "HAS_FULL_TYPE", "PCL" ]
       },
       "frameworkAssemblies": {

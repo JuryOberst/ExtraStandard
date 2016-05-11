@@ -3,32 +3,40 @@
   "version": "1.0.0-*",
   "title": "Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)",
   "authors": [ "DATALINE GmbH & Co. KG" ],
-  "owners": [ "DATALINE GmbH & Co. KG" ],
-  "summary": "Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)",
   "description": "Validierungen von eXTra 1.4-Dokumenten für das Sofortmeldungsverfahren",
-  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
   "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
-  "tags": [ "eXTra", "standard", "1.4", "validierung", "validation", "DRV", "DSRV", "komserver", "kommunikationsserver", "verfahren", "rentenversicherung", "deutsche", "sofortmeldung" ],
   "configurations": {
     "Debug": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "DEBUG" ]
       }
     },
     "Release": {
-      "compilationOptions": {
+      "buildOptions": {
         "debugType": "none",
         "xmlDoc": true
       }
     }
   },
-  "compilationOptions": {
-    "keyFile": "../../Dataline.ExtraStandard.snk"
+  "buildOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk",
+    "compile": [ "../../GlobalAssemblyInfo.cs" ]
   },
-  "packInclude": {
-    "/": "../../*.md"
+  "packOptions": {
+    "summary": "Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)",
+    "owners": [ "DATALINE GmbH & Co. KG" ],
+    "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+    "tags": [ "eXTra", "standard", "1.4", "validierung", "validation", "DRV", "DSRV", "komserver", "kommunikationsserver", "verfahren", "rentenversicherung", "deutsche", "sofortmeldung" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/dataline-gmbh/ExtraStandard"
+    },
+    "files": {
+      "mappings": {
+        "/": "../../*.md"
+      }
+    }
   },
-  "compile": [ "../../GlobalAssemblyInfo.cs" ],
   "dependencies": {
     "Dataline.ExtraStandard": "*",
     "Dataline.ExtraStandard.Validation": "*",
@@ -36,7 +44,7 @@
   },
   "frameworks": {
     "net40": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       },
       "frameworkAssemblies": {

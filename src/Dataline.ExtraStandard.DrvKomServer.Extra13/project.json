@@ -3,35 +3,43 @@
   "version": "1.0.0-*",
   "title": "eXTra-Standard 1.3 (DRV-Kommunikationsserver)",
   "authors": [ "DATALINE GmbH & Co. KG" ],
-  "owners": [ "DATALINE GmbH & Co. KG" ],
-  "summary": "Definitionen für den eXTra-Standard 1.3 (DRV-Kommunikationsserver)",
   "description": "Definitionen für den eXTra-Standard 1.3 (DRV-Kommunikationsserver)",
-  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
   "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
-  "tags": [ "eXTra", "standard", "1.3", "definition", "DRV", "DSRV", "komserver", "kommunikationsserver", "verfahren", "rentenversicherung", "deutsche", "sofortmeldung" ],
   "configurations": {
     "Debug": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "DEBUG" ]
       }
     },
     "Release": {
-      "compilationOptions": {
+      "buildOptions": {
         "debugType": "none",
         "xmlDoc": true
       }
     }
   },
-  "compilationOptions": {
-    "keyFile": "../../Dataline.ExtraStandard.snk"
+  "buildOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk",
+    "compile": [ "../../GlobalAssemblyInfo.cs" ],
+    "embed": {
+      "include": "Schemas/**/*.xsd"
+    }
   },
-  "packInclude": {
-    "/": "../../*.md"
+  "packOptions": {
+    "summary": "Definitionen für den eXTra-Standard 1.3 (DRV-Kommunikationsserver)",
+    "owners": [ "DATALINE GmbH & Co. KG" ],
+    "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+    "tags": [ "eXTra", "standard", "1.3", "definition", "DRV", "DSRV", "komserver", "kommunikationsserver", "verfahren", "rentenversicherung", "deutsche", "sofortmeldung" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/dataline-gmbh/ExtraStandard"
+    },
+    "files": {
+      "mappings": {
+        "/": "../../*.md"
+      }
+    }
   },
-  "compile": [ "../../GlobalAssemblyInfo.cs" ],
-  "resource": [
-    "Schemas/**/*.xsd"
-  ],
   "dependencies": {
     "Dataline.ExtraStandard.Extra13": "*"
   },
@@ -43,7 +51,7 @@
       }
     },
     "net40": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       },
       "frameworkAssemblies": {
@@ -52,7 +60,7 @@
       }
     },
     ".NETPortable,Version=v4.5,Profile=Profile259": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "PCL" ]
       },
       "frameworkAssemblies": {
@@ -70,11 +78,11 @@
         "System.IO": { "type": "build" },
         "System.Xml.ReaderWriter": { "type": "build" },
         "System.ObjectModel": { "type": "build" },
-        "System.Diagnostics.Debug": { "type": "build" },
+        "System.Diagnostics.Debug": { "type": "build" }
       }
     },
     ".NETPortable,Version=v4.0,Profile=Profile336": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "HAS_FULL_TYPE", "PCL" ]
       },
       "frameworkAssemblies": {
@@ -83,7 +91,7 @@
         "System.Core": { "type": "build" },
         "System.Xml": { "type": "build" },
         "System.Xml.Linq": { "type": "build" },
-        "System.Xml.Serialization": { "type": "build" },
+        "System.Xml.Serialization": { "type": "build" }
       }
     }
   }

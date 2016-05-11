@@ -2,31 +2,25 @@
   "version": "1.0.0-*",
   "title": "eXTra-Standard-Tests",
   "authors": [ "DATALINE GmbH & Co. KG" ],
-  "owners": [ "DATALINE GmbH & Co. KG" ],
-  "summary": "Tests für den eXTra-Standard",
-  "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
   "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
-  "tags": [ "eXTra", "standard", "test", "tests" ],
   "configurations": {
     "Debug": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "DEBUG" ]
       }
     },
     "Release": {
-      "compilationOptions": {
+      "buildOptions": {
         "debugType": "none"
       }
     }
   },
-  "compilationOptions": {
+  "buildOptions": {
     "keyFile": "../../dataliNe.exTrastandard.snk",
+    "compile": [ "../../GlobalAssemblyInfo.cs" ],
+    "embed": "Resources/**/*",
     "nowarn": [ "CS3016" ]
   },
-  "compile": [ "../../GlobalAssemblyInfo.cs" ],
-  "resource": [
-    "Resources/**/*"
-  ],
   "dependencies": {
     "Dataline.ExtraStandard": "*",
     "Dataline.ExtraStandard.DrvKomServer.Validation.Extra13": "*",
