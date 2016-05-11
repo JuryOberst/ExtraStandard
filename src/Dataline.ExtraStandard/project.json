@@ -86,7 +86,7 @@
         "System.Core": { "type": "build" },
         "System.Xml": { "type": "build" },
         "System.Xml.Linq": { "type": "build" },
-        "System.Xml.Serialization": { "type": "build" },
+        "System.Xml.Serialization": { "type": "build" }
       }
     }
   }
