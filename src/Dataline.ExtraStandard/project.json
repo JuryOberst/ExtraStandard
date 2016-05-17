@@ -41,9 +41,9 @@
   "frameworks": {
     "netstandard1.3": {
       "dependencies": {
-        "NETStandard.Library": "1.0.0-*",
+        "NETStandard.Library": "1.5.0-rc2-*",
         "System.Xml.XmlSerializer": {
-          "version" : "4.0.11-*"
+          "version" : "4.0.11-rc2-*"
         }
       }
     },

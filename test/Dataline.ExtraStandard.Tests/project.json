@@ -31,11 +31,14 @@
     "Dataline.ExtraStandard.Validation.Extra13": "*",
     "Dataline.ExtraStandard.Validation.Extra14": "*",
     "xunit": "2.1.0-*",
-	  "dotnet-test-xunit": "1.0.0-rc2-*",
+	  "dotnet-test-xunit": {
+      "version": "1.0.0-rc2-*",
+      "target": "package"
+    },
 	  "Microsoft.NETCore.Platforms": "1.0.1-rc2-*"
   },
   "frameworks": {
-    "net461": {
+    "net451": {
 	    "dependencies": {
 	    },
       "frameworkAssemblies": {
