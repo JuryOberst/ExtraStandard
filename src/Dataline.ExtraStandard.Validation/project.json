@@ -38,10 +38,19 @@
     }
   },
   "dependencies": {
-    "Dataline.ExtraStandard": "*"
+    "Dataline.ExtraStandard": { "target": "project" }
   },
   "frameworks": {
     "net40": {
+      "buildOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "*",
+        "System.Xml.Linq": "*"
+      }
+    },
+    "net45": {
       "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       },

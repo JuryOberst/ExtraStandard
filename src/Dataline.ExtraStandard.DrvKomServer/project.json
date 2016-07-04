@@ -41,10 +41,15 @@
   "frameworks": {
     "netstandard1.3": {
       "dependencies": {
-        "NETStandard.Library": "1.5.0-rc2-*"
+        "NETStandard.Library": "1.6.0"
       }
     },
     "net40": {
+      "buildOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      }
+    },
+    "net45": {
       "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       }

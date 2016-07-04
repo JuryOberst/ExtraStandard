@@ -41,16 +41,25 @@
     }
   },
   "dependencies": {
-    "Dataline.ExtraStandard.Extra13": "*"
+    "Dataline.ExtraStandard.Extra13": { "target": "project" }
   },
   "frameworks": {
     "netstandard1.3": {
       "dependencies": {
-        "NETStandard.Library": "1.5.0-rc2-*",
-        "System.Xml.XmlSerializer": "4.0.11-rc2-*"
+        "NETStandard.Library": "1.6.0",
+        "System.Xml.XmlSerializer": "4.0.11"
       }
     },
     "net40": {
+      "buildOptions": {
+        "define": [ "HAS_FULL_TYPE" ]
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "*",
+        "System.Xml.Linq": "*"
+      }
+    },
+    "net45": {
       "buildOptions": {
         "define": [ "HAS_FULL_TYPE" ]
       },
