@@ -23,7 +23,7 @@ namespace ExtraStandard.Extra14
 #else
             ResourceAssembly = type.GetTypeInfo().Assembly;
 #endif
-            RootUrl = new Uri($"res:///Dataline.{type.Namespace?.Replace('.', '/')}/Schemas/");
+            RootUrl = new Uri($"res:///Dataline.{type.Namespace}/Schemas/");
             StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection);
         }
 

@@ -23,7 +23,7 @@ namespace ExtraStandard.GkvKomServer.Extra14
 #else
             ResourceAssembly = type.GetTypeInfo().Assembly;
 #endif
-            RootUrl = new Uri($"res:///Dataline.{type.Namespace?.Replace('.', '/')}/xsd/");
+            RootUrl = new Uri($"res:///Dataline.{type.Namespace}/xsd/");
             StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection);
         }
 

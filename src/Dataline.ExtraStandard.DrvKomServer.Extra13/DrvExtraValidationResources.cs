@@ -45,7 +45,7 @@ namespace ExtraStandard.DrvKomServer.Extra13
         private static Uri GetRootUrl(ExtraMessageType messageType)
         {
             var type = typeof(DrvExtraValidationResources);
-            var result = new Uri($"res:///Dataline.{type.Namespace?.Replace('.', '/')}/Schemas/");
+            var result = new Uri($"res:///Dataline.{type.Namespace}/Schemas/");
             switch (messageType)
             {
                 case ExtraMessageType.Error:
