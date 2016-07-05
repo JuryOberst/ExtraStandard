@@ -3,10 +3,10 @@ using System.Reflection;
 
 using ExtraStandard.Validation;
 
-namespace ExtraStandard.GkvKomServer.Validation.Extra14
+namespace ExtraStandard.GkvKomServer.Extra13
 {
     /// <summary>
-    /// Implementation von <see cref="IExtraValidationResources"/> für eXTra 1.4-Dokumente
+    /// Implementation von <see cref="IExtraValidationResources"/> für eXTra 1.3-Dokumente
     /// </summary>
     public class GkvExtraValidationResources : IExtraValidationResources
     {
@@ -23,7 +23,7 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra14
 #else
             ResourceAssembly = type.GetTypeInfo().Assembly;
 #endif
-            RootUrl = new Uri($"res:///Dataline.{type.Namespace?.Replace('.', '/')}/xsd/");
+            RootUrl = new Uri($"res:///Dataline.{type.Namespace?.Replace('.', '/')}/Schemas/");
             StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection);
         }
 
@@ -63,9 +63,6 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra14
                         case ExtraTransportDirection.Request:
                             src = "xsd_KomServer_1_request_senden_datenlieferungen.xsd";
                             break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_2_response_senden_datenlieferungen.xsd";
-                            break;
                         default:
                             throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
                     }
@@ -79,9 +76,6 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra14
                         case ExtraTransportDirection.Request:
                             src = "xsd_KomServer_3_request_anfordern_rueckmeldungen.xsd";
                             break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_4_response_abholen_rueckmeldungen.xsd";
-                            break;
                         default:
                             throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
                     }
@@ -94,9 +88,6 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra14
                     {
                         case ExtraTransportDirection.Request:
                             src = "xsd_KomServer_5_request_senden_empfangsquittungen.xsd";
-                            break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_6_response_senden_empfangsquittungen.xsd";
                             break;
                         default:
                             throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
