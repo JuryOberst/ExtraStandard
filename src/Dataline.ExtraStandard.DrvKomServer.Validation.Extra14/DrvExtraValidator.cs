@@ -13,8 +13,9 @@ namespace ExtraStandard.DrvKomServer.Validation.Extra14
         /// </summary>
         /// <param name="messageType">Die Meldungsart die zu prüfen ist</param>
         /// <param name="transportDirection">Gesendete oder empfangene Meldung?</param>
-        public DrvExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
-            : base(new DrvExtraValidationResources(messageType, transportDirection))
+        /// <param name="isError">Liegt eine Fehlermeldung vor?</param>
+        public DrvExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
+            : base(new DrvExtraValidationResources(messageType, transportDirection, isError))
         {
         }
     }

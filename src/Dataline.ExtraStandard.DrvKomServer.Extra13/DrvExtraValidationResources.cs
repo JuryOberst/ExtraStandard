@@ -15,7 +15,8 @@ namespace ExtraStandard.DrvKomServer.Extra13
         /// </summary>
         /// <param name="messageType">Art der Meldung</param>
         /// <param name="transportDirection">Sendung oder Antwort?</param>
-        public DrvExtraValidationResources(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
+        /// <param name="isError">Liegt eine Fehlermeldung vor?</param>
+        public DrvExtraValidationResources(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             var type = GetType();
 #if HAS_FULL_TYPE
@@ -24,7 +25,7 @@ namespace ExtraStandard.DrvKomServer.Extra13
             ResourceAssembly = type.GetTypeInfo().Assembly;
 #endif
             RootUrl = GetRootUrl(messageType);
-            StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection);
+            StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection, isError);
         }
 
         /// <summary>
@@ -48,7 +49,6 @@ namespace ExtraStandard.DrvKomServer.Extra13
             var result = new Uri($"res:///Dataline.{type.Namespace}/Schemas/");
             switch (messageType)
             {
-                case ExtraMessageType.Error:
                 case ExtraMessageType.SupplyData:
                     result = new Uri(result, new Uri("DataSupply/", UriKind.Relative));
                     break;
@@ -66,42 +66,39 @@ namespace ExtraStandard.DrvKomServer.Extra13
             return result;
         }
 
-        private static string GetXsdFileName(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
+        private static string GetXsdFileName(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             string src;
-            switch (messageType)
+            if (isError)
             {
-                case ExtraMessageType.Error:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Response:
-                            src = "eXTra-error-1.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                case ExtraMessageType.SupplyData:
-                case ExtraMessageType.GetProcessingResult:
-                case ExtraMessageType.AcknowledgeProcessingResult:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Request:
-                            src = "eXTra-request-1.xsd";
-                            break;
-                        case ExtraTransportDirection.Response:
-                            src = "eXTra-response-1.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                case ExtraMessageType.GetProcessingResultQuery:
-                case ExtraMessageType.AcknowledgeProcessingResultQuery:
-                    src = "eXTra-messages-1.xsd";
-                    break;
-                default:
-                    throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                src = "eXTra-error-1.xsd";
+            }
+            else
+            {
+                switch (messageType)
+                {
+                    case ExtraMessageType.SupplyData:
+                    case ExtraMessageType.GetProcessingResult:
+                    case ExtraMessageType.AcknowledgeProcessingResult:
+                        switch (transportDirection)
+                        {
+                            case ExtraTransportDirection.Request:
+                                src = "eXTra-request-1.xsd";
+                                break;
+                            case ExtraTransportDirection.Response:
+                                src = "eXTra-response-1.xsd";
+                                break;
+                            default:
+                                throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                        }
+                        break;
+                    case ExtraMessageType.GetProcessingResultQuery:
+                    case ExtraMessageType.AcknowledgeProcessingResultQuery:
+                        src = "eXTra-messages-1.xsd";
+                        break;
+                    default:
+                        throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                }
             }
             return src;
         }

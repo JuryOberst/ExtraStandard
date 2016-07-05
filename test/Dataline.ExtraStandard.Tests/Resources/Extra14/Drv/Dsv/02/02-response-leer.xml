@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xres:Transport version="1.4" profile="http://www.extra-standard.de/profile/DEUEV/2.0" xsi:schemaLocation="http://www.extra-standard.de/namespace/response/1 eXTra-response-1.xsd" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xres="http://www.extra-standard.de/namespace/response/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xres:TransportHeader>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>DSVVDataReq-12</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-17T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>TestClient</xcpt:Product>
+				<xcpt:Manufacturer>Testhersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>DeliveryServer</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+			<!--Optional-->
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+		</xcpt:RequestDetails>
+		<xcpt:ResponseDetails>
+			<xcpt:ResponseID>147586263</xcpt:ResponseID>
+			<xcpt:TimeStamp>2015-12-17T09:32:47Z</xcpt:TimeStamp>
+			<xcpt:Report highestWeight="http://www.extra-standard.de/weight/INFO">
+				<xcpt:Flag weight="http://www.extra-standard.de/weight/INFO">
+					<xcpt:Code>E97</xcpt:Code>
+					<xcpt:Text>Anfrage erfolgreich - Keine Datensätze vorhanden</xcpt:Text>
+				</xcpt:Flag>
+			</xcpt:Report>
+		</xcpt:ResponseDetails>
+	</xres:TransportHeader>
+	<xres:TransportBody/>
+</xres:Transport>

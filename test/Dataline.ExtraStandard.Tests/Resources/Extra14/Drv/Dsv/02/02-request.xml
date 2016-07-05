@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xreq:Transport version="1.4" profile="http://www.extra-standard.de/profile/DEUEV/2.0" xsi:schemaLocation="http://www.extra-standard.de/namespace/request/1 eXTra-request-1.xsd" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xreq="http://www.extra-standard.de/namespace/request/1" xmlns:xmsg="http://www.extra-standard.de/namespace/message/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xreq:TransportHeader>
+		<xcpt:Sender>
+			<xcpt:SenderID>12345678</xcpt:SenderID>
+		</xcpt:Sender>
+		<xcpt:Receiver>
+			<xcpt:ReceiverID>66667777</xcpt:ReceiverID>
+		</xcpt:Receiver>
+		<xcpt:RequestDetails>
+			<xcpt:RequestID>DSVVDataReq-12</xcpt:RequestID>
+			<xcpt:TimeStamp>2015-12-17T09:30:47Z</xcpt:TimeStamp>
+			<xcpt:Application>
+				<xcpt:Product>TestClient</xcpt:Product>
+				<xcpt:Manufacturer>Testhersteller</xcpt:Manufacturer>
+			</xcpt:Application>
+			<xcpt:Procedure>DeliveryServer</xcpt:Procedure>
+			<xcpt:DataType>http://www.extra-standard.de/datatypes/DataRequest</xcpt:DataType>
+			<!--Optional-->
+			<xcpt:Scenario>http://www.extra-standard.de/scenario/request-with-response</xcpt:Scenario>
+		</xcpt:RequestDetails>
+	</xreq:TransportHeader>
+	<xreq:TransportBody>
+		<xcpt:Data>
+			<xcpt:ElementSequence>
+				<xmsg:DataRequest version="1.3">
+					<xmsg:Query>
+						<xmsg:Argument property="http://www.extra-standard.de/property/ResponseID" type="xs:string" event="http://www.extra-standard.de/event/SendData">
+							<xmsg:GT>25</xmsg:GT>
+						</xmsg:Argument>
+						<xmsg:Argument property="http://www.extra-standard.de/property/Procedure">
+							<xmsg:EQ>DSV</xmsg:EQ>
+						</xmsg:Argument>
+					</xmsg:Query>
+				</xmsg:DataRequest>
+			</xcpt:ElementSequence>
+		</xcpt:Data>
+	</xreq:TransportBody>
+</xreq:Transport>

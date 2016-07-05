@@ -13,8 +13,9 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra14
         /// </summary>
         /// <param name="messageType">Die Meldungsart die zu prüfen ist</param>
         /// <param name="transportDirection">Gesendete oder empfangene Meldung?</param>
-        public GkvExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
-            : base(new GkvExtraValidationResources(messageType, transportDirection))
+        /// <param name="isError">Liegt eine Fehlermeldung vor?</param>
+        public GkvExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
+            : base(new GkvExtraValidationResources(messageType, transportDirection, isError))
         {
         }
     }

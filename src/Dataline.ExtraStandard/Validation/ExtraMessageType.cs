@@ -29,10 +29,5 @@
         /// Bestätigung der Abholung eines Verarbeitungsergebnisses
         /// </summary>
         AcknowledgeProcessingResult,
-
-        /// <summary>
-        /// Antwort auf Fehler
-        /// </summary>
-        Error,
     }
 }

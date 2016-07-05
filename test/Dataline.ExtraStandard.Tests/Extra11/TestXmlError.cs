@@ -53,7 +53,7 @@ namespace ExtraStandard.Tests.Extra11
         [Fact]
         public void ValidateError()
         {
-            var validator = new GenericExtraValidator(ExtraMessageType.Error, ExtraTransportDirection.Response);
+            var validator = new GenericExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response, true);
             validator.Validate(_xmlData);
         }
     }

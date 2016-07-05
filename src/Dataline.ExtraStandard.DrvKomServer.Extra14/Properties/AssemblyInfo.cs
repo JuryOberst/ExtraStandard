@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ExtraStandard.DrvKomServer.Extra13")]
+[assembly: AssemblyTitle("ExtraStandard.DrvKomServer.Extra14")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyProduct("ExtraStandard.DrvKomServer.Extra13")]
+[assembly: AssemblyProduct("ExtraStandard.DrvKomServer.Extra14")]
 
 #if !PCL
 [assembly: ComVisible(false)]

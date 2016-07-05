@@ -25,6 +25,7 @@
     "Dataline.ExtraStandard": { "target": "project" },
     "Dataline.ExtraStandard.DrvKomServer.Validation.Extra13": { "target": "project" },
     "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14": { "target": "project" },
+    "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv": { "target": "project" },
     "Dataline.ExtraStandard.GkvKomServer.Validation.Extra13": { "target": "project" },
     "Dataline.ExtraStandard.GkvKomServer.Validation.Extra14": { "target": "project" },
     "Dataline.ExtraStandard.Validation.Extra11": { "target": "project" },

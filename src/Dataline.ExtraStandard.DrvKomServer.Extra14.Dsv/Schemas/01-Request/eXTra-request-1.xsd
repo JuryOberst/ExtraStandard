@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Request Senden DSVV
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xcpt="http://www.extra-standard.de/namespace/components/1" xmlns:xreq="http://www.extra-standard.de/namespace/request/1" xmlns="http://www.extra-standard.de/namespace/request/1" targetNamespace="http://www.extra-standard.de/namespace/request/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4.0">
+	<!-- Import shared element declarations and type declarations -->
+	<xs:import namespace="http://www.extra-standard.de/namespace/components/1" schemaLocation="eXTra-components-1.xsd"/>
+	<xs:import namespace="http://www.extra-standard.de/namespace/plugins/1" schemaLocation="eXTra-plugins-1.xsd"/>
+	<xs:complexType name="TransportRequestType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:RootElementType">
+				<xs:sequence minOccurs="1" maxOccurs="1">
+					<xs:element ref="TransportHeader" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="TransportPlugIns" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="TransportBody" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Other type declarations -->
+	<xs:complexType name="TransportRequestHeaderType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:sequence minOccurs="1" maxOccurs="1">
+					<xs:element ref="xcpt:Sender" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="xcpt:Receiver" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="xcpt:RequestDetails" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TransportRequestBodyType
+        @changed 2009-05-05 MS + Added TransformedData to choice group
+    -->
+	<xs:complexType name="TransportRequestBodyType">
+		<xs:complexContent>
+			<xs:extension base="xcpt:ElementWithOptionalVersionType">
+				<xs:choice minOccurs="1" maxOccurs="1">
+					<xs:element ref="xcpt:Data" minOccurs="1" maxOccurs="1"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Element declarations -->
+	<!-- Transport Layer -->
+	<xs:element name="Transport" type="TransportRequestType"/>
+	<!-- @deprecated 2011-06-21 1.3 MS -->
+	<xs:element name="XMLTransport" type="TransportRequestType"/>
+	<xs:element name="TransportHeader" type="TransportRequestHeaderType"/>
+	<xs:element name="TransportPlugIns" type="xcpt:AnyPlugInContainerType"/>
+	<xs:element name="TransportBody" type="TransportRequestBodyType"/>
+</xs:schema>

@@ -15,7 +15,8 @@ namespace ExtraStandard.GkvKomServer.Extra14
         /// </summary>
         /// <param name="messageType">Art der Meldung</param>
         /// <param name="transportDirection">Sendung oder Antwort?</param>
-        public GkvExtraValidationResources(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
+        /// <param name="isError">Liegt eine Fehlermeldung vor?</param>
+        public GkvExtraValidationResources(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             var type = GetType();
 #if HAS_FULL_TYPE
@@ -24,7 +25,7 @@ namespace ExtraStandard.GkvKomServer.Extra14
             ResourceAssembly = type.GetTypeInfo().Assembly;
 #endif
             RootUrl = new Uri($"res:///Dataline.{type.Namespace}/xsd/");
-            StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection);
+            StartXmlSchemaFileName = GetXsdFileName(messageType, transportDirection, isError);
         }
 
         /// <summary>
@@ -42,68 +43,65 @@ namespace ExtraStandard.GkvKomServer.Extra14
         /// </summary>
         public string StartXmlSchemaFileName { get; }
 
-        private static string GetXsdFileName(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
+        private static string GetXsdFileName(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             string src;
-            switch (messageType)
+            if (isError)
             {
-                case ExtraMessageType.Error:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_0_error.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                case ExtraMessageType.SupplyData:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Request:
-                            src = "xsd_KomServer_1_request_senden_datenlieferungen.xsd";
-                            break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_2_response_senden_datenlieferungen.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                case ExtraMessageType.GetProcessingResultQuery:
-                    src = "xsd_KomServer_3_Body_request_anfordern_rueckmeldungen.xsd";
-                    break;
-                case ExtraMessageType.GetProcessingResult:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Request:
-                            src = "xsd_KomServer_3_request_anfordern_rueckmeldungen.xsd";
-                            break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_4_response_abholen_rueckmeldungen.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                case ExtraMessageType.AcknowledgeProcessingResultQuery:
-                    src = "xsd_KomServer_5_Body_request_senden_empfangsquittungen.xsd";
-                    break;
-                case ExtraMessageType.AcknowledgeProcessingResult:
-                    switch (transportDirection)
-                    {
-                        case ExtraTransportDirection.Request:
-                            src = "xsd_KomServer_5_request_senden_empfangsquittungen.xsd";
-                            break;
-                        case ExtraTransportDirection.Response:
-                            src = "xsd_KomServer_6_response_senden_empfangsquittungen.xsd";
-                            break;
-                        default:
-                            throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
-                    }
-                    break;
-                default:
-                    throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                src = "xsd_KomServer_0_error.xsd";
+            }
+            else
+            {
+                switch (messageType)
+                {
+                    case ExtraMessageType.SupplyData:
+                        switch (transportDirection)
+                        {
+                            case ExtraTransportDirection.Request:
+                                src = "xsd_KomServer_1_request_senden_datenlieferungen.xsd";
+                                break;
+                            case ExtraTransportDirection.Response:
+                                src = "xsd_KomServer_2_response_senden_datenlieferungen.xsd";
+                                break;
+                            default:
+                                throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                        }
+                        break;
+                    case ExtraMessageType.GetProcessingResultQuery:
+                        src = "xsd_KomServer_3_Body_request_anfordern_rueckmeldungen.xsd";
+                        break;
+                    case ExtraMessageType.GetProcessingResult:
+                        switch (transportDirection)
+                        {
+                            case ExtraTransportDirection.Request:
+                                src = "xsd_KomServer_3_request_anfordern_rueckmeldungen.xsd";
+                                break;
+                            case ExtraTransportDirection.Response:
+                                src = "xsd_KomServer_4_response_abholen_rueckmeldungen.xsd";
+                                break;
+                            default:
+                                throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                        }
+                        break;
+                    case ExtraMessageType.AcknowledgeProcessingResultQuery:
+                        src = "xsd_KomServer_5_Body_request_senden_empfangsquittungen.xsd";
+                        break;
+                    case ExtraMessageType.AcknowledgeProcessingResult:
+                        switch (transportDirection)
+                        {
+                            case ExtraTransportDirection.Request:
+                                src = "xsd_KomServer_5_request_senden_empfangsquittungen.xsd";
+                                break;
+                            case ExtraTransportDirection.Response:
+                                src = "xsd_KomServer_6_response_senden_empfangsquittungen.xsd";
+                                break;
+                            default:
+                                throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                        }
+                        break;
+                    default:
+                        throw new NotSupportedException($"The combination {messageType}/{transportDirection} is not supported yet.");
+                }
             }
             return src;
         }

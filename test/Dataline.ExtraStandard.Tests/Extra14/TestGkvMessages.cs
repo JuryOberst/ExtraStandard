@@ -18,7 +18,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData("KomServer-Error.xml");
             var document = ExtraUtilities.Deserialize<ExtraErrorType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.Error, ExtraTransportDirection.Response);
+            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response, true);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -30,7 +30,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData("KomServer-Empfangsquittung-Body.xml");
             var document = ExtraUtilities.Deserialize<ConfirmationOfReceiptType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResultQuery, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResultQuery, ExtraTransportDirection.Request, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -44,7 +44,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportRequestType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResult, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResult, ExtraTransportDirection.Request, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -58,7 +58,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportResponseType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResult, ExtraTransportDirection.Response);
+            var validator = new GkvExtraValidator(ExtraMessageType.AcknowledgeProcessingResult, ExtraTransportDirection.Response, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -72,7 +72,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportRequestType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Request, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -86,7 +86,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportResponseType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response);
+            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -98,7 +98,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData("KomServer-Meldung-Response-EinPaketAbgelehnt.xml");
             var document = ExtraUtilities.Deserialize<TransportResponseType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response);
+            var validator = new GkvExtraValidator(ExtraMessageType.SupplyData, ExtraTransportDirection.Response, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -114,7 +114,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<DataRequestType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResultQuery, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResultQuery, ExtraTransportDirection.Request, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -128,7 +128,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportRequestType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Request, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -146,7 +146,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportResponseType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Response);
+            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Response, false);
             var now = DateTimeOffset.Now;
             validator.Validate(data);
             Assert.True(now <= validator.LastGetEntityTimestamp);
@@ -160,7 +160,7 @@ namespace ExtraStandard.Tests.Extra14
             var data = LoadData(resourceName);
             var document = ExtraUtilities.Deserialize<TransportRequestType>(data);
             Assert.NotNull(document);
-            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Request);
+            var validator = new GkvExtraValidator(ExtraMessageType.GetProcessingResult, ExtraTransportDirection.Request, false);
             Assert.Throws<XmlSchemaValidationException>(() => validator.Validate(data));
         }
 

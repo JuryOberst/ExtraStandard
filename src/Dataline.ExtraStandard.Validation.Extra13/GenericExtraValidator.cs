@@ -12,8 +12,9 @@ namespace ExtraStandard.Validation.Extra13
         /// </summary>
         /// <param name="messageType">Die Meldungsart die zu prüfen ist</param>
         /// <param name="transportDirection">Gesendete oder empfangene Meldung?</param>
-        public GenericExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection)
-            : base(new GenericExtraValidationResources(messageType, transportDirection))
+        /// <param name="isError">Liegt eine Fehlermeldung vor?</param>
+        public GenericExtraValidator(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
+            : base(new GenericExtraValidationResources(messageType, transportDirection, isError))
         {
         }
     }
