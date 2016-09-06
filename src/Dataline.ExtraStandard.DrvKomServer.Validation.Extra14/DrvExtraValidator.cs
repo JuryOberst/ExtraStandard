@@ -6,7 +6,7 @@ namespace ExtraStandard.DrvKomServer.Validation.Extra14
     /// <summary>
     /// Standard-Implementation eines <see cref="ExtraValidator"/> für GKV eXTra-1.4-Dokumente
     /// </summary>
-    public class DrvExtraValidator : ResourceExtraValidator
+    public class DrvExtraValidator : ResourceExtraValidator, IDrvExtra14Validator
     {
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="DrvExtraValidator"/> Klasse.

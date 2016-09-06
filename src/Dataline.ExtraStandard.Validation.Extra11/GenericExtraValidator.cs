@@ -5,7 +5,7 @@ namespace ExtraStandard.Validation.Extra11
     /// <summary>
     /// Standard-Implementation eines <see cref="ExtraValidator"/> für eXTra-1.1-Dokumente
     /// </summary>
-    public class GenericExtraValidator : ResourceExtraValidator
+    public class GenericExtraValidator : ResourceExtraValidator, IExtra11Validator
     {
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="GenericExtraValidator"/> Klasse.

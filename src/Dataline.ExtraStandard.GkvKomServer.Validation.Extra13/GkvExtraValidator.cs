@@ -6,7 +6,7 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra13
     /// <summary>
     /// Standard-Implementation eines <see cref="ExtraValidator"/> für DSRV eXTra-1.3-Dokumente
     /// </summary>
-    public class GkvExtraValidator : ResourceExtraValidator
+    public class GkvExtraValidator : ResourceExtraValidator, IGkvExtra13Validator
     {
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="GkvExtraValidator"/> Klasse.
