@@ -1,4 +1,4 @@
-﻿namespace Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv
+﻿namespace ExtraStandard.DrvKomServer.Extra14.Dsv
 {
     /// <summary>
     /// Identifikatoren für Datentypen
