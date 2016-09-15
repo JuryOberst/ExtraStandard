@@ -1,0 +1,57 @@
+﻿{
+  "name": "Dataline.ExtraStandard.Compression",
+  "version": "1.0.0-*",
+  "title": "eXTra-Standard-Kompressionsverfahren",
+  "authors": [ "DATALINE GmbH & Co. KG" ],
+  "description": "Unterstützte Kompressionsverfahren für den eXTra-Standard",
+  "copyright": "Copyright © 2015-2016 DATALINE GmbH & Co. KG",
+  "configurations": {
+    "Debug": {
+      "buildOptions": {
+        "define": [ "DEBUG" ]
+      }
+    },
+    "Release": {
+      "buildOptions": {
+        "debugType": "none",
+        "xmlDoc": true
+      }
+    }
+  },
+
+  "buildOptions": {
+    "keyFile": "../../Dataline.ExtraStandard.snk",
+    "compile": "../../GlobalAssemblyInfo.cs",
+    "embed": "Schemas/*.xsd"
+  },
+
+  "packOptions": {
+    "summary": "Unterstützte Kompressionsverfahren für den eXTra-Standard",
+    "owners": [ "DATALINE GmbH & Co. KG" ],
+    "licenseUrl": "https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md",
+    "tags": [ "eXTra", "standard", "1.4", "kompression", "gzip", "zip" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/dataline-gmbh/ExtraStandard"
+    },
+    "files": {
+      "mappings": {
+        "/": "../../*.md"
+      }
+    }
+  },
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "Dataline.ExtraStandard": {
+      "target": "project"
+    }
+  },
+
+  "frameworks": {
+    "netstandard1.3": {
+    },
+    "net45": {
+    }
+  }
+}
