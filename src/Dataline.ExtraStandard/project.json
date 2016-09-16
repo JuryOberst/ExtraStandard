@@ -76,6 +76,7 @@
         "System.Xml.XmlSerializer": { "type": "build" },
         "System.Linq": { "type": "build" },
         "System.Text.Encoding": { "type": "build" },
+        "System.Text.Encoding.Extensions": { "type": "build" },
         "System.Xml.Linq": { "type": "build" },
         "System.Collections": { "type": "build" },
         "System.Xml.XDocument": { "type": "build" },

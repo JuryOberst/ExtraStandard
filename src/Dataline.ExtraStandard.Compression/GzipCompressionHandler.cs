@@ -8,8 +8,10 @@ namespace ExtraStandard.Compression
     /// </summary>
     public class GzipCompressionHandler : IExtraCompressionHandler
     {
+        /// <inheritdoc />
         public string AlgorithmId { get; } = ExtraCompression.GZip;
 
+        /// <inheritdoc />
         public byte[] Compress(byte[] data, string dataName)
         {
             var output = new MemoryStream();
@@ -18,6 +20,7 @@ namespace ExtraStandard.Compression
             return output.ToArray();
         }
 
+        /// <inheritdoc />
         public byte[] Decompress(byte[] data)
         {
             var output = new MemoryStream();

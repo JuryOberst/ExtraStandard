@@ -7,6 +7,7 @@ namespace ExtraStandard.Validation.Extra11
     /// </summary>
     public class GenericExtraValidatorFactory : IExtra11ValidatorFactory
     {
+        /// <inheritdoc />
         public IExtra11Validator Create(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             return new GenericExtraValidator(messageType, transportDirection, isError);

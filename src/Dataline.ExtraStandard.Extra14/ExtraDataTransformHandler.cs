@@ -5,11 +5,19 @@ using System.Xml;
 
 namespace ExtraStandard.Extra14
 {
+    /// <summary>
+    /// Führt Daten-Transformationen aus
+    /// </summary>
     public class ExtraDataTransformHandler
     {
         private readonly IDictionary<string, IExtraCompressionHandler> _compressionHandlers;
         private readonly IDictionary<string, IExtraEncryptionHandler> _encryptionHandlers;
 
+        /// <summary>
+        /// Initialisiert eine neue Instanz der <see cref="ExtraDataTransformHandler"/> Klasse.
+        /// </summary>
+        /// <param name="compressionHandlers">Die erlaubten Kompressionsverfahren</param>
+        /// <param name="encryptionHandlers">Die erlaubten Krypto-Verfahren</param>
         public ExtraDataTransformHandler(
             IEnumerable<IExtraCompressionHandler> compressionHandlers,
             IEnumerable<IExtraEncryptionHandler> encryptionHandlers)
@@ -18,6 +26,14 @@ namespace ExtraStandard.Extra14
             _encryptionHandlers = encryptionHandlers.ToDictionary(x => x.AlgorithmId);
         }
 
+        /// <summary>
+        /// Führt die angegebenen <paramref name="transformAlgorithmIds"/> auf den übergebenen Daten aus.
+        /// </summary>
+        /// <param name="data">Die übergebenen Daten</param>
+        /// <param name="dataName">Der Name der übergebenen Daten (nur relevant bei ZIP-Kompression)</param>
+        /// <param name="requestTimestamp">Der Zeitstempel der Daten-Übermittlung (nur relevant bei PKCS#7-Verschlüsselung)</param>
+        /// <param name="transformAlgorithmIds">Die zu verwendenden Daten-Transformationen</param>
+        /// <returns>Die transformierten Daten</returns>
         public Tuple<byte[], IEnumerable<AbstractTransformType>> Transform(byte[] data, string dataName, DateTime requestTimestamp, params string[] transformAlgorithmIds)
         {
             var transforms = new List<AbstractTransformType>();
@@ -97,6 +113,12 @@ namespace ExtraStandard.Extra14
             return Tuple.Create<byte[], IEnumerable<AbstractTransformType>>(output, transforms);
         }
 
+        /// <summary>
+        /// Daten-Transformationen rückgängig machen (für die Verarbeitung der eXTra-Antworten)
+        /// </summary>
+        /// <param name="data">Die vom Absender transformierten Daten</param>
+        /// <param name="dataTransforms">Die vom Absender durchgeführten Transformationen</param>
+        /// <returns>Die ursprünglichen (nicht mehr transformierten) Daten</returns>
         public byte[] ReverseTransform(byte[] data, DataTransformsType dataTransforms)
         {
             var output = data;
@@ -133,6 +155,18 @@ namespace ExtraStandard.Extra14
             return output;
         }
 
+        /// <summary>
+        /// Liefert <code>true</code>, wenn ein <see cref="DataType"/>-Element während eines <see cref="Transform"/> erstellt werden soll.
+        /// </summary>
+        /// <param name="first">Ist es die erste Transformation?</param>
+        /// <param name="last">Ist es die letzte Transformation?</param>
+        /// <param name="index">Nummer der Transformation (beginnend bei 1)</param>
+        /// <param name="forInput">Ist für die Daten-Transformation die Eingangsgröße oder die Ausgangsgröße gemeint?</param>
+        /// <returns><code>true</code>, wenn ein <see cref="DataType"/> erstellt werden soll</returns>
+        /// <remarks>
+        /// Standardmäßig werden nur die <see cref="DataType"/>-Elemente für die Eingabe-Daten der ersten Transformation
+        /// und für die Ausgabe-Daten der letzten Transformation erstellt.
+        /// </remarks>
         public virtual bool AddDataInfo(bool first, bool last, int index, bool forInput)
         {
             return first && forInput || last && !forInput;

@@ -11,7 +11,7 @@ namespace ExtraStandard.DrvKomServer.Extra14.Dsv
     public class DrvDsvExtraValidationResources : IExtraValidationResources
     {
         /// <summary>
-        /// Initialisiert eine neue Instanz der <see cref="DrvExtraValidationResources"/> Klasse.
+        /// Initialisiert eine neue Instanz der <see cref="DrvDsvExtraValidationResources"/> Klasse.
         /// </summary>
         /// <param name="messageType">Art der Meldung</param>
         /// <param name="transportDirection">Sendung oder Antwort?</param>

@@ -12,13 +12,16 @@ namespace ExtraStandard.Compression
 
         private readonly ZipCompressionHandler _zipMethod = new ZipCompressionHandler();
 
+        /// <inheritdoc />
         public string AlgorithmId => _zipMethod.AlgorithmId;
 
+        /// <inheritdoc />
         public byte[] Compress(byte[] data, string dataName)
         {
             return _gzipMethod.Compress(data, dataName);
         }
 
+        /// <inheritdoc />
         public byte[] Decompress(byte[] data)
         {
             if (data.Length > 2 && data[0] == 0x50 && data[1] == 0x4B)

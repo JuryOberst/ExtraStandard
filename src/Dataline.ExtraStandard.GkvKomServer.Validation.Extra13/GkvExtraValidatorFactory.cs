@@ -8,6 +8,7 @@ namespace ExtraStandard.GkvKomServer.Validation.Extra13
     /// </summary>
     public class GkvExtraValidatorFactory : IGkvExtra13ValidatorFactory
     {
+        /// <inheritdoc />
         public IGkvExtra13Validator Create(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             return new GkvExtraValidator(messageType, transportDirection, isError);

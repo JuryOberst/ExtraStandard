@@ -9,8 +9,10 @@ namespace ExtraStandard.Compression
     /// </summary>
     public class ZipCompressionHandler : IExtraCompressionHandler
     {
+        /// <inheritdoc />
         public string AlgorithmId { get; } = ExtraCompression.Zip;
 
+        /// <inheritdoc />
         public byte[] Compress(byte[] data, string dataName)
         {
             var fileName = string.IsNullOrEmpty(dataName) ? "data.bin" : dataName;
@@ -24,6 +26,7 @@ namespace ExtraStandard.Compression
             return output.ToArray();
         }
 
+        /// <inheritdoc />
         public byte[] Decompress(byte[] data)
         {
             var output = new MemoryStream();

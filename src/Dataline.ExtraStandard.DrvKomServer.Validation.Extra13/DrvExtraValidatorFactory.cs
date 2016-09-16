@@ -8,6 +8,7 @@ namespace ExtraStandard.DrvKomServer.Validation.Extra13
     /// </summary>
     public class DrvExtraValidatorFactory : IDrvExtra13ValidatorFactory
     {
+        /// <inheritdoc />
         public IDrvExtra13Validator Create(ExtraMessageType messageType, ExtraTransportDirection transportDirection, bool isError)
         {
             return new DrvExtraValidator(messageType, transportDirection, isError);

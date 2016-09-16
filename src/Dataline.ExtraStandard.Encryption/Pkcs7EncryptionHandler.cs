@@ -17,12 +17,21 @@ using Org.BouncyCastle.X509;
 
 namespace ExtraStandard.Encryption
 {
+    /// <summary>
+    /// Signatur und Verschlüsselung über PKCS#7 v1.5
+    /// </summary>
     public class Pkcs7EncryptionHandler : IExtraEncryptionHandler
     {
         private readonly IEnumerable<Pkcs12Store> _allSenderCertificates;
         private readonly Pkcs12Store _senderCertificate;
         private readonly X509Certificate _receiverCertificate;
 
+        /// <summary>
+        /// Initialisiert eine neue Instanz der <see cref="Pkcs7EncryptionHandler"/> Klasse.
+        /// </summary>
+        /// <param name="senderCertificate">Das X509-Zertifikat des Absenders (PKCS#12)</param>
+        /// <param name="receiverCertificate">Das X509-Zertifikat des Empfängers</param>
+        /// <param name="oldSenderCertificates">Die abgelaufenen X509-Zertifikate des Absenders</param>
         public Pkcs7EncryptionHandler(Pkcs12Store senderCertificate, X509Certificate receiverCertificate,
             IEnumerable<Pkcs12Store> oldSenderCertificates = null)
         {
@@ -31,8 +40,10 @@ namespace ExtraStandard.Encryption
             _allSenderCertificates = (oldSenderCertificates ?? new Pkcs12Store[0]).Concat(new[] { senderCertificate }).Reverse().ToList();
         }
 
+        /// <inheritdoc />
         public string AlgorithmId { get; } = ExtraEncryption.Pkcs7;
 
+        /// <inheritdoc />
         public byte[] Encrypt(byte[] data, DateTime requestTimestamp)
         {
             var signedData = SignData(data, _senderCertificate, requestTimestamp);
@@ -40,6 +51,7 @@ namespace ExtraStandard.Encryption
             return encryptedData;
         }
 
+        /// <inheritdoc />
         public byte[] Decrypt(byte[] data)
         {
             foreach (var pkcsStore in _allSenderCertificates)
