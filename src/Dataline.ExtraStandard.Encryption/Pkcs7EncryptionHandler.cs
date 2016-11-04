@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using ExtraStandard;
-
 using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Asn1.BC;
 using Org.BouncyCastle.Asn1.Cms;
-using Org.BouncyCastle.Asn1.Nist;
 using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.Cms;
 using Org.BouncyCastle.Pkcs;
@@ -84,7 +80,7 @@ namespace ExtraStandard.Encryption
                 };
                 var signer = sigInfos.GetFirstSigner(signerId);
                 if (!signer.Verify(_receiverCertificate))
-                    throw new ExtraException("Die Signatur konnte nicht überprüft werden.");
+                    throw new ExtraEncryptionException("Failed to verify the signature.");
 
                 var verifiedData = new MemoryStream();
                 sig.SignedContent.Write(verifiedData);
@@ -92,7 +88,7 @@ namespace ExtraStandard.Encryption
                 return verifiedData.ToArray();
             }
 
-            throw new ExtraException("Kein Zertifikat für die Entschlüsselung gefunden.");
+            throw new ExtraEncryptionException("No certificate for decryption found.");
         }
 
         private static byte[] SignData(byte[] data, Pkcs12Store signCertificate, DateTime? requestTimestamp = null)
