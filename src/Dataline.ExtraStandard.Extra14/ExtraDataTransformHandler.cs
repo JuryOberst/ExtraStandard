@@ -50,7 +50,7 @@ namespace ExtraStandard.Extra14
                         order = XmlConvert.ToString(index),
                     };
 
-                    if (AddDataInfo(index == 1, index == transformAlgorithmIds.Length, index, true))
+                    if (AddDataInfo(compressionHandler, index == 1, index == transformAlgorithmIds.Length, index, true))
                     {
                         transform.InputData = new DataType()
                         {
@@ -60,7 +60,7 @@ namespace ExtraStandard.Extra14
 
                     output = compressionHandler.Compress(output, dataName);
 
-                    if (AddDataInfo(index == 1, index == transformAlgorithmIds.Length, index, false))
+                    if (AddDataInfo(compressionHandler, index == 1, index == transformAlgorithmIds.Length, index, false))
                     {
                         transform.OutputData = new DataType()
                         {
@@ -81,7 +81,7 @@ namespace ExtraStandard.Extra14
                             order = XmlConvert.ToString(index),
                         };
 
-                        if (AddDataInfo(index == 1, index == transformAlgorithmIds.Length, index, true))
+                        if (AddDataInfo(encryptionHandler, index == 1, index == transformAlgorithmIds.Length, index, true))
                         {
                             transform.InputData = new DataType()
                             {
@@ -91,7 +91,7 @@ namespace ExtraStandard.Extra14
 
                         output = encryptionHandler.Encrypt(output, requestTimestamp);
 
-                        if (AddDataInfo(index == 1, index == transformAlgorithmIds.Length, index, false))
+                        if (AddDataInfo(encryptionHandler, index == 1, index == transformAlgorithmIds.Length, index, false))
                         {
                             transform.OutputData = new DataType()
                             {
@@ -158,6 +158,7 @@ namespace ExtraStandard.Extra14
         /// <summary>
         /// Liefert <code>true</code>, wenn ein <see cref="DataType"/>-Element während eines <see cref="Transform"/> erstellt werden soll.
         /// </summary>
+        /// <param name="handler">Der Kompressionshandler für den die Informationen abgefragt werden können</param>
         /// <param name="first">Ist es die erste Transformation?</param>
         /// <param name="last">Ist es die letzte Transformation?</param>
         /// <param name="index">Nummer der Transformation (beginnend bei 1)</param>
@@ -167,9 +168,27 @@ namespace ExtraStandard.Extra14
         /// Standardmäßig werden nur die <see cref="DataType"/>-Elemente für die Eingabe-Daten der ersten Transformation
         /// und für die Ausgabe-Daten der letzten Transformation erstellt.
         /// </remarks>
-        public virtual bool AddDataInfo(bool first, bool last, int index, bool forInput)
+        public virtual bool AddDataInfo(IExtraCompressionHandler handler, bool first, bool last, int index, bool forInput)
         {
-            return first && forInput || last && !forInput;
+            return handler.AlgorithmId != ExtraCompression.None && first && forInput || last && !forInput;
+        }
+
+        /// <summary>
+        /// Liefert <code>true</code>, wenn ein <see cref="DataType"/>-Element während eines <see cref="Transform"/> erstellt werden soll.
+        /// </summary>
+        /// <param name="handler">Der Verschlüsselungshandler für den die Informationen abgefragt werden können</param>
+        /// <param name="first">Ist es die erste Transformation?</param>
+        /// <param name="last">Ist es die letzte Transformation?</param>
+        /// <param name="index">Nummer der Transformation (beginnend bei 1)</param>
+        /// <param name="forInput">Ist für die Daten-Transformation die Eingangsgröße oder die Ausgangsgröße gemeint?</param>
+        /// <returns><code>true</code>, wenn ein <see cref="DataType"/> erstellt werden soll</returns>
+        /// <remarks>
+        /// Standardmäßig werden nur die <see cref="DataType"/>-Elemente für die Eingabe-Daten der ersten Transformation
+        /// und für die Ausgabe-Daten der letzten Transformation erstellt.
+        /// </remarks>
+        public virtual bool AddDataInfo(IExtraEncryptionHandler handler, bool first, bool last, int index, bool forInput)
+        {
+            return handler.AlgorithmId != ExtraEncryption.None && first && forInput || last && !forInput;
         }
 
         private void ValidatePayloadSize(byte[] payload, DataType dataInfo)
