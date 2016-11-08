@@ -170,7 +170,7 @@ namespace ExtraStandard.Extra14
         /// </remarks>
         public virtual bool AddDataInfo(IExtraCompressionHandler handler, bool first, bool last, int index, bool forInput)
         {
-            return handler.AlgorithmId != ExtraCompression.None && first && forInput || last && !forInput;
+            return first && forInput || last && !forInput;
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace ExtraStandard.Extra14
         /// </remarks>
         public virtual bool AddDataInfo(IExtraEncryptionHandler handler, bool first, bool last, int index, bool forInput)
         {
-            return handler.AlgorithmId != ExtraEncryption.None && first && forInput || last && !forInput;
+            return first && forInput || last && !forInput;
         }
 
         private void ValidatePayloadSize(byte[] payload, DataType dataInfo)
