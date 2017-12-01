@@ -5,7 +5,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyProduct("Basis-Validierungsfunktionen für den eXTra-Standard")]
 
-#if !PCL
 [assembly: ComVisible(false)]
 [assembly: Guid("9e2c5f39-b4b8-4e6c-86f1-240331d1ab1a")]
-#endif

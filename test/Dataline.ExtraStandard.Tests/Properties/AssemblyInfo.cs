@@ -6,7 +6,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyProduct("ExtraStandard.Tests")]
 
-#if !PCL
 [assembly: ComVisible(false)]
 [assembly: Guid("7fbc9b34-06f6-4dbc-8663-8cff246158c6")]
-#endif

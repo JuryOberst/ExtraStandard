@@ -5,7 +5,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyProduct("eXTra 1.1")]
 
-#if !PCL
 [assembly: ComVisible(false)]
 [assembly: Guid("99c9c691-cb04-442f-bc2e-519b63468cac")]
-#endif

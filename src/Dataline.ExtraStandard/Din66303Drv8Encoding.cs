@@ -52,13 +52,11 @@ namespace ExtraStandard
             return result;
         });
 
-#if !PCL
         /// <inheritdoc />
         public override string EncodingName { get; } = "DIN 66303:1986-11 DRV8";
 
         /// <inheritdoc />
         public override bool IsSingleByte { get; } = true;
-#endif
 
         /// <inheritdoc />
         public override int GetByteCount(char[] chars, int index, int count)

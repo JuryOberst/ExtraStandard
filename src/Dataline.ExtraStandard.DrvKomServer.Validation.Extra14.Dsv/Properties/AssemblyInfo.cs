@@ -5,7 +5,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyProduct("ExtraStandard.DrvKomServer.Validation.Extra14.Dsv")]
 
-#if !PCL
 [assembly: ComVisible(false)]
 [assembly: Guid("6a134319-3673-4c6a-a5aa-1aeaec4103e9")]
-#endif

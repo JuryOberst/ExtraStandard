@@ -5,7 +5,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyProduct("ExtraStandard.GkvKomServer.Validation.Extra14")]
 
-#if !PCL
 [assembly: ComVisible(false)]
 [assembly: Guid("5c086bb4-a763-4879-81b0-db7c25c6ff70")]
-#endif
