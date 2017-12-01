@@ -1,28 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Copyright>Copyright © 2015-2016 DATALINE GmbH &amp; Co. KG</Copyright>
     <AssemblyTitle>eXTra-Standard-Tests</AssemblyTitle>
-    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <NoWarn>$(NoWarn);CS3016</NoWarn>
     <AssemblyName>Dataline.ExtraStandard.Tests</AssemblyName>
     <PackageId>Dataline.ExtraStandard.Tests</PackageId>
-    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
   </PropertyGroup>
 
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
+
   <ItemGroup>
-    <Compile Include="..\..\GlobalAssemblyInfo.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" Link="Properties\GlobalAssemblyInfo.cs" />
     <EmbeddedResource Include="Resources\**\*" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <None Remove="..\..\*.md" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +34,7 @@
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>none</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>

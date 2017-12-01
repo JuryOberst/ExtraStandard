@@ -2,34 +2,14 @@
 
   <PropertyGroup>
     <Description>Basis-Definitionen für den eXTra-Standard</Description>
-    <Copyright>Copyright © 2015-2016 DATALINE GmbH &amp; Co. KG</Copyright>
     <AssemblyTitle>eXTra-Standard-Basisdefinitionen</AssemblyTitle>
-    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
     <TargetFrameworks>netstandard2.0;netstandard1.3;net40;net45</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard</AssemblyName>
     <PackageId>Dataline.ExtraStandard</PackageId>
     <PackageTags>eXTra;standard;basis</PackageTags>
-    <PackageLicenseUrl>https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md</PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/dataline-gmbh/ExtraStandard</RepositoryUrl>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\..\GlobalAssemblyInfo.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" Link="Properties\GlobalAssemblyInfo.cs" />
-    <None Include="..\..\*.md">
-      <PackagePath>/</PackagePath>
-      <Pack>true</Pack>
-    </None>
-  </ItemGroup>
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.0.11" />
@@ -48,14 +28,5 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <DefineConstants>$(DefineConstants);HAS_FULL_TYPE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugType>none</DebugType>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
 
 </Project>

@@ -2,34 +2,14 @@
 
   <PropertyGroup>
     <Description>Validierungen von eXTra 1.4-Dokumenten für das Sofortmeldungsverfahren</Description>
-    <Copyright>Copyright © 2015-2016 DATALINE GmbH &amp; Co. KG</Copyright>
     <AssemblyTitle>Validierungen von Versicherungsnummernabfragen (eXTra 1.4, DRV-Kommunikationsserver)</AssemblyTitle>
-    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
     <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv</AssemblyName>
     <PackageId>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv</PackageId>
     <PackageTags>eXTra;standard;1.4;validierung;validation;DRV;DSRV;komserver;kommunikationsserver;verfahren;rentenversicherung;deutsche;versicherungsnummer</PackageTags>
-    <PackageLicenseUrl>https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md</PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/dataline-gmbh/ExtraStandard</RepositoryUrl>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\..\GlobalAssemblyInfo.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" Link="Properties\GlobalAssemblyInfo.cs" />
-    <None Include="..\..\*.md">
-      <PackagePath>/</PackagePath>
-      <Pack>true</Pack>
-    </None>
-  </ItemGroup>
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
@@ -41,15 +21,6 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <DefineConstants>$(DefineConstants);HAS_FULL_TYPE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugType>none</DebugType>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System" />
