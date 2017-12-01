@@ -4,6 +4,8 @@
   <PropertyGroup>
     <Copyright>Copyright © 2015-2017 DATALINE GmbH &amp; Co. KG</Copyright>
     <Authors>DATALINE GmbH &amp; Co. KG</Authors>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)Dataline.ExtraStandard.snk</AssemblyOriginatorKeyFile> 
+    <SignAssembly>true</SignAssembly>
     <PackageLicenseUrl>https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageReleaseNotes>- Umstellung auf .NET Core Tooling 2
 - Unterstützung für .NET Standard 2.0
