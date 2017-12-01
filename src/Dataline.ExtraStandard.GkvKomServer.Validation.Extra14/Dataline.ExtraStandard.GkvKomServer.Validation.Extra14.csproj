@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Validierungen von eXTra 1.4-Dokumenten für das GKV-Kommunikationsserver-Verfahren</Description>
+    <Copyright>Copyright © 2015-2016 DATALINE GmbH &amp; Co. KG</Copyright>
+    <AssemblyTitle>Validierungen von eXTra 1.4-Dokumenten (GKV-Kommunikationsserver)</AssemblyTitle>
+    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
+    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <AssemblyName>Dataline.ExtraStandard.GkvKomServer.Validation.Extra14</AssemblyName>
+    <PackageId>Dataline.ExtraStandard.GkvKomServer.Validation.Extra14</PackageId>
+    <PackageTags>eXTra;standard;1.4;validierung;validation;GKV;komserver;kommunikationsserver;verfahren</PackageTags>
+    <PackageLicenseUrl>https://github.com/dataline-gmbh/ExtraStandard/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/dataline-gmbh/ExtraStandard</RepositoryUrl>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" Link="Properties\GlobalAssemblyInfo.cs" />
+    <EmbeddedResource Include="xsd\*.xsd" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <None Include="..\..\*.md">
+      <PackagePath>/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
+    <ProjectReference Include="..\Dataline.ExtraStandard.Validation\Dataline.ExtraStandard.Validation.csproj" />
+    <ProjectReference Include="..\Dataline.ExtraStandard.GkvKomServer.Extra14\Dataline.ExtraStandard.GkvKomServer.Extra14.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <DefineConstants>$(DefineConstants);HAS_FULL_TYPE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>none</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>

@@ -44,7 +44,7 @@ namespace ExtraStandard.Tests.Extra11
             Assert.NotNull(error.ResponseDetails.Report);
             Assert.Equal(ExtraFlagWeight.Error, error.ResponseDetails.Report.highestWeight);
             Assert.NotNull(error.ResponseDetails.Report.Flag);
-            Assert.Equal(1, error.ResponseDetails.Report.Flag.Length);
+            Assert.Single(error.ResponseDetails.Report.Flag);
             Assert.Equal(ExtraFlagWeight.Error, error.ResponseDetails.Report.Flag[0].weight);
             Assert.Equal("E003", error.ResponseDetails.Report.Flag[0].Code.Value);
             Assert.Equal("Fehler in der eXTra-XML Struktur: Bei der XSD-Prüfung der gesendeten XML-Nachricht sind folgende Fehler aufgetreten:  # Zeile: 10 - Position: 5 - Das Element 'Receiver' in Namespace 'http://www.extra-standard.de/namespace/components/1' hat ein ungültiges untergeordnetes Element 'Name' in Namespace 'http://www.extra-standard.de/namespace/components/1'. Erwartet wurde die Liste möglicher Elemente: 'ReceiverID' in Namespace 'http://www.extra-standard.de/namespace/components/1'. ## FehlerCode: E003 ## Workflow-ID: A(3794b25e-5d4d-4dbe-872f-513c2e6d7ff8)", error.ResponseDetails.Report.Flag[0].Text.Value);

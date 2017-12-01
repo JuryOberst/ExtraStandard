@@ -19,7 +19,7 @@ namespace ExtraStandard.Tests.Extra14
             Assert.True(certificates.versionSpecified);
             Assert.Equal(CertificatesTypeVersion.Item10, certificates.version);
             Assert.NotNull(certificates.X509EncCertificate);
-            Assert.Equal(1, certificates.X509EncCertificate.Length);
+            Assert.Single(certificates.X509EncCertificate);
             var cert = certificates.X509EncCertificate[0];
             Assert.NotNull(cert);
             Assert.NotNull(cert.Value);
@@ -40,7 +40,7 @@ namespace ExtraStandard.Tests.Extra14
             Assert.NotNull(contact);
             Assert.Equal("Technischer Support 24/7", contact.usageHint);
             Assert.NotNull(contact.Endpoint);
-            Assert.Equal(1, contact.Endpoint.Length);
+            Assert.Single(contact.Endpoint);
             var endpoint = contact.Endpoint[0];
             Assert.NotNull(endpoint);
             Assert.Equal(EndpointTypeType.SMTP, endpoint.type);
@@ -50,7 +50,7 @@ namespace ExtraStandard.Tests.Extra14
             Assert.NotNull(contact);
             Assert.Equal("Allgemeine Informationen", contact.usageHint);
             Assert.NotNull(contact.Endpoint);
-            Assert.Equal(1, contact.Endpoint.Length);
+            Assert.Single(contact.Endpoint);
             endpoint = contact.Endpoint[0];
             Assert.NotNull(endpoint);
             Assert.Equal(EndpointTypeType.SMTP, endpoint.type);
@@ -93,9 +93,9 @@ namespace ExtraStandard.Tests.Extra14
             Assert.NotNull(dataTransforms.Encryption);
             Assert.NotNull(dataTransforms.Signature);
 
-            Assert.Equal(1, dataTransforms.Compression.Length);
-            Assert.Equal(1, dataTransforms.Encryption.Length);
-            Assert.Equal(1, dataTransforms.Signature.Length);
+            Assert.Single(dataTransforms.Compression);
+            Assert.Single(dataTransforms.Encryption);
+            Assert.Single(dataTransforms.Signature);
             {
                 var item = dataTransforms.Compression[0];
                 Assert.NotNull(item);

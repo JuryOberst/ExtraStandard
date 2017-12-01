@@ -1,62 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3736C7F9-5426-4548-9063-70BAEA1E2826}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{179837CE-E824-46D7-BD80-0F3F9A123A4A}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard", "src\Dataline.ExtraStandard\Dataline.ExtraStandard.xproj", "{34C3813C-74CC-499C-8E02-F480AB53C5F2}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Extra11", "src\Dataline.ExtraStandard.Extra11\Dataline.ExtraStandard.Extra11.xproj", "{732E8814-B150-45B5-807B-93480E41E4C4}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Extra13", "src\Dataline.ExtraStandard.Extra13\Dataline.ExtraStandard.Extra13.xproj", "{E51026C0-BA50-4378-97D2-352F67B60D3D}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Extra14", "src\Dataline.ExtraStandard.Extra14\Dataline.ExtraStandard.Extra14.xproj", "{54D669F3-D1CC-4EC9-9F41-CD597EDBA25B}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Validation", "src\Dataline.ExtraStandard.Validation\Dataline.ExtraStandard.Validation.xproj", "{4C1DA071-278C-48A4-BE90-9B2208BED541}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Validation.Extra11", "src\Dataline.ExtraStandard.Validation.Extra11\Dataline.ExtraStandard.Validation.Extra11.xproj", "{4D0830A2-0D77-4BCD-95AC-C0CC4AE14CA5}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Validation.Extra13", "src\Dataline.ExtraStandard.Validation.Extra13\Dataline.ExtraStandard.Validation.Extra13.xproj", "{F317CAF4-A10D-4462-A7F0-855474C23918}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Validation.Extra14", "src\Dataline.ExtraStandard.Validation.Extra14\Dataline.ExtraStandard.Validation.Extra14.xproj", "{FDACE231-FFE3-40FE-AFC4-5356F1BAA617}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer", "src\Dataline.ExtraStandard.DrvKomServer\Dataline.ExtraStandard.DrvKomServer.xproj", "{451A0BBF-C195-4A91-91E4-9607EC1F6739}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Extra13", "src\Dataline.ExtraStandard.DrvKomServer.Extra13\Dataline.ExtraStandard.DrvKomServer.Extra13.xproj", "{9A8FD7B9-F53B-4A7A-BB38-84DE8552257C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Extra14", "src\Dataline.ExtraStandard.DrvKomServer.Extra14\Dataline.ExtraStandard.DrvKomServer.Extra14.xproj", "{47F1237C-D833-4562-8D02-BF84D9A2452C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra13", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13.xproj", "{AD70B1ED-4DFC-42BB-9B5E-DDD67DB02840}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.xproj", "{DE5898D6-938A-481F-9905-3590FDF6E285}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.GkvKomServer", "src\Dataline.ExtraStandard.GkvKomServer\Dataline.ExtraStandard.GkvKomServer.xproj", "{FA5C733E-B75F-45EB-A30A-6E87F676A29E}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.GkvKomServer.Validation.Extra13", "src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13.xproj", "{87E6A9D2-5078-4671-A65B-626C60C962E1}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.GkvKomServer.Validation.Extra14", "src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14.xproj", "{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FB1CB97E-44E2-4197-8170-42C77C876F55}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Tests", "test\Dataline.ExtraStandard.Tests\Dataline.ExtraStandard.Tests.xproj", "{A91937C2-58BB-4D2D-90C9-72ACE423AC8D}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.GkvKomServer.Extra13", "src\Dataline.ExtraStandard.GkvKomServer.Extra13\Dataline.ExtraStandard.GkvKomServer.Extra13.xproj", "{498092BA-B337-4981-AD41-0C4C7D89921C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.GkvKomServer.Extra14", "src\Dataline.ExtraStandard.GkvKomServer.Extra14\Dataline.ExtraStandard.GkvKomServer.Extra14.xproj", "{CF940E60-ADEF-4A66-85CD-4A92CC820321}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DSRV", "DSRV", "{C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GKV", "GKV", "{C0886470-8EF4-4E76-BEFC-0F80AE94C64F}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv", "src\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv.xproj", "{FF05B08B-EFC2-41D5-961C-DD8AD4630761}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv.xproj", "{6A134319-3673-4C6A-A5AA-1AEAEC4103E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validierung", "Validierung", "{3DB6A8E7-FF13-4B0F-9C6E-CFE85833726B}"
 EndProject
@@ -66,9 +21,51 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validierung", "Validierung"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTransform", "DataTransform", "{5DB440A9-4375-4AD4-8183-30DFB72B25D1}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Compression", "src\Dataline.ExtraStandard.Compression\Dataline.ExtraStandard.Compression.xproj", "{2E73690B-2514-49EA-BF2A-74D921E702CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard", "src\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj", "{34C3813C-74CC-499C-8E02-F480AB53C5F2}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.ExtraStandard.Encryption", "src\Dataline.ExtraStandard.Encryption\Dataline.ExtraStandard.Encryption.xproj", "{D0C47CF3-86AF-4BCD-9CED-A6639F145804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Extra11", "src\Dataline.ExtraStandard.Extra11\Dataline.ExtraStandard.Extra11.csproj", "{732E8814-B150-45B5-807B-93480E41E4C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Extra13", "src\Dataline.ExtraStandard.Extra13\Dataline.ExtraStandard.Extra13.csproj", "{E51026C0-BA50-4378-97D2-352F67B60D3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Extra14", "src\Dataline.ExtraStandard.Extra14\Dataline.ExtraStandard.Extra14.csproj", "{54D669F3-D1CC-4EC9-9F41-CD597EDBA25B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Validation", "src\Dataline.ExtraStandard.Validation\Dataline.ExtraStandard.Validation.csproj", "{4C1DA071-278C-48A4-BE90-9B2208BED541}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Validation.Extra11", "src\Dataline.ExtraStandard.Validation.Extra11\Dataline.ExtraStandard.Validation.Extra11.csproj", "{4D0830A2-0D77-4BCD-95AC-C0CC4AE14CA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Validation.Extra13", "src\Dataline.ExtraStandard.Validation.Extra13\Dataline.ExtraStandard.Validation.Extra13.csproj", "{F317CAF4-A10D-4462-A7F0-855474C23918}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Validation.Extra14", "src\Dataline.ExtraStandard.Validation.Extra14\Dataline.ExtraStandard.Validation.Extra14.csproj", "{FDACE231-FFE3-40FE-AFC4-5356F1BAA617}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer", "src\Dataline.ExtraStandard.DrvKomServer\Dataline.ExtraStandard.DrvKomServer.csproj", "{451A0BBF-C195-4A91-91E4-9607EC1F6739}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Extra13", "src\Dataline.ExtraStandard.DrvKomServer.Extra13\Dataline.ExtraStandard.DrvKomServer.Extra13.csproj", "{9A8FD7B9-F53B-4A7A-BB38-84DE8552257C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Extra14", "src\Dataline.ExtraStandard.DrvKomServer.Extra14\Dataline.ExtraStandard.DrvKomServer.Extra14.csproj", "{47F1237C-D833-4562-8D02-BF84D9A2452C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra13", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13.csproj", "{AD70B1ED-4DFC-42BB-9B5E-DDD67DB02840}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.csproj", "{DE5898D6-938A-481F-9905-3590FDF6E285}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.GkvKomServer", "src\Dataline.ExtraStandard.GkvKomServer\Dataline.ExtraStandard.GkvKomServer.csproj", "{FA5C733E-B75F-45EB-A30A-6E87F676A29E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.GkvKomServer.Validation.Extra13", "src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13.csproj", "{87E6A9D2-5078-4671-A65B-626C60C962E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.GkvKomServer.Validation.Extra14", "src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14.csproj", "{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.GkvKomServer.Extra13", "src\Dataline.ExtraStandard.GkvKomServer.Extra13\Dataline.ExtraStandard.GkvKomServer.Extra13.csproj", "{498092BA-B337-4981-AD41-0C4C7D89921C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.GkvKomServer.Extra14", "src\Dataline.ExtraStandard.GkvKomServer.Extra14\Dataline.ExtraStandard.GkvKomServer.Extra14.csproj", "{CF940E60-ADEF-4A66-85CD-4A92CC820321}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv", "src\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv.csproj", "{FF05B08B-EFC2-41D5-961C-DD8AD4630761}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv", "src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv.csproj", "{6A134319-3673-4C6A-A5AA-1AEAEC4103E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Compression", "src\Dataline.ExtraStandard.Compression\Dataline.ExtraStandard.Compression.csproj", "{2E73690B-2514-49EA-BF2A-74D921E702CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Encryption", "src\Dataline.ExtraStandard.Encryption\Dataline.ExtraStandard.Encryption.csproj", "{D0C47CF3-86AF-4BCD-9CED-A6639F145804}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.ExtraStandard.Tests", "test\Dataline.ExtraStandard.Tests\Dataline.ExtraStandard.Tests.csproj", "{D8C60293-9858-4F19-BCE3-C3278A2DC367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,10 +137,6 @@ Global
 		{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A91937C2-58BB-4D2D-90C9-72ACE423AC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A91937C2-58BB-4D2D-90C9-72ACE423AC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A91937C2-58BB-4D2D-90C9-72ACE423AC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A91937C2-58BB-4D2D-90C9-72ACE423AC8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{498092BA-B337-4981-AD41-0C4C7D89921C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{498092BA-B337-4981-AD41-0C4C7D89921C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{498092BA-B337-4981-AD41-0C4C7D89921C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -168,11 +161,21 @@ Global
 		{D0C47CF3-86AF-4BCD-9CED-A6639F145804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0C47CF3-86AF-4BCD-9CED-A6639F145804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0C47CF3-86AF-4BCD-9CED-A6639F145804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C60293-9858-4F19-BCE3-C3278A2DC367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C60293-9858-4F19-BCE3-C3278A2DC367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C60293-9858-4F19-BCE3-C3278A2DC367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C60293-9858-4F19-BCE3-C3278A2DC367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
+		{C0886470-8EF4-4E76-BEFC-0F80AE94C64F} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
+		{3DB6A8E7-FF13-4B0F-9C6E-CFE85833726B} = {C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B}
+		{A8719E1E-9E82-4A1D-BF67-7B10DE32A1D1} = {C0886470-8EF4-4E76-BEFC-0F80AE94C64F}
+		{82ED73C6-58A9-4161-BE1D-EC35D0AD6A70} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
+		{5DB440A9-4375-4AD4-8183-30DFB72B25D1} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
 		{34C3813C-74CC-499C-8E02-F480AB53C5F2} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
 		{732E8814-B150-45B5-807B-93480E41E4C4} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
 		{E51026C0-BA50-4378-97D2-352F67B60D3D} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
@@ -189,18 +192,15 @@ Global
 		{FA5C733E-B75F-45EB-A30A-6E87F676A29E} = {C0886470-8EF4-4E76-BEFC-0F80AE94C64F}
 		{87E6A9D2-5078-4671-A65B-626C60C962E1} = {A8719E1E-9E82-4A1D-BF67-7B10DE32A1D1}
 		{B2B27BC1-6AA6-4516-A437-92DBF0ED43C0} = {A8719E1E-9E82-4A1D-BF67-7B10DE32A1D1}
-		{A91937C2-58BB-4D2D-90C9-72ACE423AC8D} = {FB1CB97E-44E2-4197-8170-42C77C876F55}
 		{498092BA-B337-4981-AD41-0C4C7D89921C} = {C0886470-8EF4-4E76-BEFC-0F80AE94C64F}
 		{CF940E60-ADEF-4A66-85CD-4A92CC820321} = {C0886470-8EF4-4E76-BEFC-0F80AE94C64F}
-		{C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
-		{C0886470-8EF4-4E76-BEFC-0F80AE94C64F} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
 		{FF05B08B-EFC2-41D5-961C-DD8AD4630761} = {C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B}
 		{6A134319-3673-4C6A-A5AA-1AEAEC4103E9} = {3DB6A8E7-FF13-4B0F-9C6E-CFE85833726B}
-		{3DB6A8E7-FF13-4B0F-9C6E-CFE85833726B} = {C30BF5F8-30BB-44DF-9B3C-AEBE8AD6D89B}
-		{A8719E1E-9E82-4A1D-BF67-7B10DE32A1D1} = {C0886470-8EF4-4E76-BEFC-0F80AE94C64F}
-		{82ED73C6-58A9-4161-BE1D-EC35D0AD6A70} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
-		{5DB440A9-4375-4AD4-8183-30DFB72B25D1} = {3736C7F9-5426-4548-9063-70BAEA1E2826}
 		{2E73690B-2514-49EA-BF2A-74D921E702CF} = {5DB440A9-4375-4AD4-8183-30DFB72B25D1}
 		{D0C47CF3-86AF-4BCD-9CED-A6639F145804} = {5DB440A9-4375-4AD4-8183-30DFB72B25D1}
+		{D8C60293-9858-4F19-BCE3-C3278A2DC367} = {FB1CB97E-44E2-4197-8170-42C77C876F55}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8688DCA4-EB7E-4494-831C-060B0F1030B4}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Copyright>Copyright © 2015-2016 DATALINE GmbH &amp; Co. KG</Copyright>
+    <AssemblyTitle>eXTra-Standard-Tests</AssemblyTitle>
+    <Authors>DATALINE GmbH &amp; Co. KG</Authors>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <NoWarn>$(NoWarn);CS3016</NoWarn>
+    <AssemblyName>Dataline.ExtraStandard.Tests</AssemblyName>
+    <PackageId>Dataline.ExtraStandard.Tests</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" Link="Properties\GlobalAssemblyInfo.cs" />
+    <EmbeddedResource Include="Resources\**\*" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13\Dataline.ExtraStandard.GkvKomServer.Validation.Extra13.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14\Dataline.ExtraStandard.GkvKomServer.Validation.Extra14.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.Validation.Extra11\Dataline.ExtraStandard.Validation.Extra11.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.Validation.Extra13\Dataline.ExtraStandard.Validation.Extra13.csproj" />
+    <ProjectReference Include="..\..\src\Dataline.ExtraStandard.Validation.Extra14\Dataline.ExtraStandard.Validation.Extra14.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+</Project>

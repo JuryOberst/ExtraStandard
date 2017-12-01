@@ -32,13 +32,13 @@ namespace ExtraStandard.Tests.Extra14
             var body = transport.TransportBody;
             Assert.NotNull(body);
             Assert.NotNull(body.Items);
-            Assert.Equal(1, body.Items.Length);
+            Assert.Single(body.Items);
 
             var bodyData = Assert.IsType<DataType1>(body.Items[0]);
 
             var anyXmlData = Assert.IsType<AnyXMLType>(bodyData.Item);
             Assert.NotNull(anyXmlData.Text);
-            Assert.Equal(1, anyXmlData.Text.Length);
+            Assert.Single(anyXmlData.Text);
             Assert.Equal("test data", anyXmlData.Text[0]);
             Assert.Null(anyXmlData.Items);
 
@@ -46,7 +46,7 @@ namespace ExtraStandard.Tests.Extra14
             Assert.NotNull(logging);
             Assert.Equal(LoggingVersionType.Item10, logging.version);
             Assert.NotNull(logging.Items);
-            Assert.Equal(1, logging.Items.Length);
+            Assert.Single(logging.Items);
 
             var logSequence = Assert.IsType<LogSequenceType>(logging.Items[0]);
             Assert.Equal(XmlConvert.ToDateTime("2007-06-06T00:00:01", XmlDateTimeSerializationMode.Local), logSequence.TimeStamp);

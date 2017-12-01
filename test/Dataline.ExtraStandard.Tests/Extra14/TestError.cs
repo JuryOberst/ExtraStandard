@@ -28,7 +28,7 @@ namespace ExtraStandard.Tests.Extra14
             Assert.NotNull(error.Report);
             Assert.Equal(ExtraFlagWeight.Error, error.Report.highestWeight);
             Assert.NotNull(error.Report.Flag);
-            Assert.Equal(1, error.Report.Flag.Length);
+            Assert.Single(error.Report.Flag);
             var flag = error.Report.Flag[0];
             Assert.NotNull(flag);
             Assert.Equal(ExtraFlagWeight.Error, flag.weight);
