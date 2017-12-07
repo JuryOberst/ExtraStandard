@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>eXTra-Standard-Tests</AssemblyTitle>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>net47;netcoreapp2.0</TargetFrameworks>
     <NoWarn>$(NoWarn);CS3016</NoWarn>
     <AssemblyName>Dataline.ExtraStandard.Tests</AssemblyName>
     <PackageId>Dataline.ExtraStandard.Tests</PackageId>
