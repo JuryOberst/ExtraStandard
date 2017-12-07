@@ -49,7 +49,7 @@ namespace ExtraStandard.Tests.Extra14
         {
             var step = resourceName.Substring(0, 2);
             var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var resName = $"Dataline.ExtraStandard.Tests.Resources.Extra14.Drv.Dsv._{step}.{resourceName}";
+            var resName = $"ExtraStandard.Tests.Resources.Extra14.Drv.Dsv._{step}.{resourceName}";
             var output = new MemoryStream();
             using (var input = asm.GetManifestResourceStream(resName))
             {

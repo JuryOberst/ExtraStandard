@@ -159,7 +159,7 @@ namespace ExtraStandard.Tests.Extra14
         private static byte[] LoadData(string resourceName)
         {
             var asm = Assembly.GetExecutingAssembly();
-            var resName = $"Dataline.ExtraStandard.Tests.Resources.Extra14.{resourceName}";
+            var resName = $"ExtraStandard.Tests.Resources.Extra14.{resourceName}";
             var output = new MemoryStream();
             using (var input = asm.GetManifestResourceStream(resName))
             {

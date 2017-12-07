@@ -6,6 +6,7 @@
     <NoWarn>$(NoWarn);CS3016</NoWarn>
     <AssemblyName>Dataline.ExtraStandard.Tests</AssemblyName>
     <PackageId>Dataline.ExtraStandard.Tests</PackageId>
+    <RootNamespace>ExtraStandard.Tests</RootNamespace>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />

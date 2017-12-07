@@ -44,7 +44,7 @@ namespace ExtraStandard.Tests.Extra14
         private static byte[] LoadData(string resourceName)
         {
             var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var resName = $"Dataline.ExtraStandard.Tests.Resources.Extra14.Drv.{resourceName}";
+            var resName = $"ExtraStandard.Tests.Resources.Extra14.Drv.{resourceName}";
             var output = new MemoryStream();
             using (var input = asm.GetManifestResourceStream(resName))
             {
