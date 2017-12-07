@@ -33,7 +33,15 @@
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <DefineConstants>$(DefineConstants);HAS_FULL_TYPE</DefineConstants>
+    <DefineConstants>$(DefineConstants);HAS_FULL_TYPE;SUPPORTS_SERIALIZABLE;SUPPORTS_PKCS_SIGNING</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);SUPPORTS_SERIALIZABLE;SUPPORTS_PKCS_SIGNING</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <DefineConstants>$(DefineConstants);SUPPORTS_SERIALIZABLE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
