@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-#if !NET45
+#if !SUPPORTS_PKCS_SIGNING
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.Cms;
 using Org.BouncyCastle.Asn1.Pkcs;
@@ -32,11 +32,8 @@ namespace ExtraStandard.Encryption
         /// <param name="oldSenderCertificates">Die abgelaufenen X509-Zertifikate des Absenders</param>
         public Pkcs7EncryptionHandler(Pkcs12Store senderCertificate, X509Certificate receiverCertificate, IEnumerable<Pkcs12Store> oldSenderCertificates = null)
         {
-#if NET45
-            var senderCert = ConvertToCertificate2(senderCertificate);
-            var recCert = ConvertToCertificate2(receiverCertificate);
-            var oldSenderCerts = oldSenderCertificates?.Select(ConvertToCertificate2);
-            _encryptionHandler = new NativePkcs7EncryptionHandler(senderCert, recCert, oldSenderCerts);
+#if SUPPORTS_PKCS_SIGNING
+            _encryptionHandler = new NativePkcs7EncryptionHandler(senderCertificate, receiverCertificate, oldSenderCertificates);
 #else
             _encryptionHandler = new BouncyCastlePkcs7EncryptionHandler(senderCertificate, receiverCertificate, oldSenderCertificates);
 #endif
@@ -50,20 +47,17 @@ namespace ExtraStandard.Encryption
         /// <param name="oldSenderCertificates">Die abgelaufenen X509-Zertifikate des Absenders</param>
         public Pkcs7EncryptionHandler(X509Certificate2 senderCertificate, X509Certificate2 receiverCertificate, IEnumerable<X509Certificate2> oldSenderCertificates = null)
         {
-#if NET45
+#if SUPPORTS_PKCS_SIGNING
             _encryptionHandler = new NativePkcs7EncryptionHandler(senderCertificate, receiverCertificate, oldSenderCertificates);
 #else
-            var senderCert = new Pkcs12Store(new MemoryStream(senderCertificate.Export(X509ContentType.Pkcs12)), new char[0]);
-            var receiverCert = new Org.BouncyCastle.X509.X509CertificateParser().ReadCertificate(receiverCertificate.RawData);
-            var oldSenderCerts = oldSenderCertificates?.Select(cert => new Pkcs12Store(new MemoryStream(cert.Export(X509ContentType.Pkcs12)), new char[0]));
-            _encryptionHandler = new BouncyCastlePkcs7EncryptionHandler(senderCert, receiverCert, oldSenderCerts);
+            _encryptionHandler = new BouncyCastlePkcs7EncryptionHandler(senderCertificate, receiverCertificate, oldSenderCertificates);
 #endif
         }
 
         /// <summary>
         /// Wird native Signatur und Entschlüsselung unterstützt?
         /// </summary>
-#if NET45
+#if SUPPORTS_PKCS_SIGNING
         public static bool IsNativeSupported { get; } = true;
 #else
         public static bool IsNativeSupported { get; } = false;
@@ -83,19 +77,5 @@ namespace ExtraStandard.Encryption
         {
             return _encryptionHandler.Decrypt(data);
         }
-
-#if NET45
-        private static X509Certificate2 ConvertToCertificate2(Pkcs12Store store)
-        {
-            var senderCertStream = new MemoryStream();
-            store.Save(senderCertStream, new char[0], new SecureRandom());
-            return new X509Certificate2(senderCertStream.ToArray());
-        }
-
-        private static X509Certificate2 ConvertToCertificate2(X509Certificate cert)
-        {
-            return new X509Certificate2(cert.GetEncoded());
-        }
-#endif
     }
 }

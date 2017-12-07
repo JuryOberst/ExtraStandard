@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.Cms;
@@ -10,6 +11,8 @@ using Org.BouncyCastle.Cms;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
+
+using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
 
 namespace ExtraStandard.Encryption
 {
@@ -34,6 +37,20 @@ namespace ExtraStandard.Encryption
             _senderCertificate = senderCertificate;
             _receiverCertificate = receiverCertificate;
             _allSenderCertificates = (oldSenderCertificates ?? new Pkcs12Store[0]).Concat(new[] { senderCertificate }).Reverse().ToList();
+        }
+
+        /// <summary>
+        /// Initialisiert eine neue Instanz der <see cref="BouncyCastlePkcs7EncryptionHandler"/> Klasse.
+        /// </summary>
+        /// <param name="senderCertificate">Das X509-Zertifikat des Absenders (PKCS#12)</param>
+        /// <param name="receiverCertificate">Das X509-Zertifikat des Empfängers</param>
+        /// <param name="oldSenderCertificates">Die abgelaufenen X509-Zertifikate des Absenders</param>
+        public BouncyCastlePkcs7EncryptionHandler(X509Certificate2 senderCertificate, X509Certificate2 receiverCertificate, IEnumerable<X509Certificate2> oldSenderCertificates = null)
+            : this(
+                  new Pkcs12Store(new MemoryStream(senderCertificate.Export(X509ContentType.Pkcs12)), new char[0]), 
+                  new X509CertificateParser().ReadCertificate(receiverCertificate.Export(X509ContentType.Cert)),
+                  oldSenderCertificates?.Select(cert => new Pkcs12Store(new MemoryStream(cert.Export(X509ContentType.Pkcs12)), new char[0])))
+        {
         }
 
         /// <inheritdoc />
