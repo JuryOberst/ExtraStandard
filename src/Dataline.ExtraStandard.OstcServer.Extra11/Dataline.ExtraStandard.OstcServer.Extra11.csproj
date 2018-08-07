@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Definitionen für den eXTra-Standard 1.1 (OSTC-Server)</Description>
+    <AssemblyTitle>eXTra-Standard 1.1 (OSTC-Server)</AssemblyTitle>
+    <TargetFrameworks>netstandard2.0;netstandard1.3;net40;net45</TargetFrameworks>
+    <AssemblyName>Dataline.ExtraStandard.OstcServer.Extra11</AssemblyName>
+    <PackageId>Dataline.ExtraStandard.OstcServer.Extra11</PackageId>
+    <PackageTags>eXTra;standard;1.1;definition;OSTC;zertifikat</PackageTags>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
+
+  <ItemGroup>
+    <EmbeddedResource Include="xsd\**\*.xsd" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>

@@ -5,6 +5,7 @@
     /// </summary>
     public partial class ExtraFlag
     {
+
         /// <summary>
         /// Holt oder setzt den Fehlercode
         /// </summary>

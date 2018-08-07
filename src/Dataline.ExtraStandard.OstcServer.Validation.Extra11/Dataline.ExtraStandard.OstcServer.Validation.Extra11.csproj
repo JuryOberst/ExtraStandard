@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Validierungen von eXTra 1.1-Dokumenten für das OSTC-Server-Verfahren</Description>
+    <AssemblyTitle>Validierungen von eXTra 1.1-Dokumenten (OSTC-Server)</AssemblyTitle>
+    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <AssemblyName>Dataline.ExtraStandard.OstcServer.Validation.Extra11</AssemblyName>
+    <PackageId>Dataline.ExtraStandard.OstcServer.Validation.Extra11</PackageId>
+    <PackageTags>eXTra;standard;1.1;validierung;validation;OSTC;zertifikat</PackageTags>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
+
+  <ItemGroup>
+    <EmbeddedResource Include="xsd\*.xsd" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
+    <ProjectReference Include="..\Dataline.ExtraStandard.Validation\Dataline.ExtraStandard.Validation.csproj" />
+    <ProjectReference Include="..\Dataline.ExtraStandard.OstcServer.Extra11\Dataline.ExtraStandard.OstcServer.Extra11.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
