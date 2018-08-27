@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Validierungen von eXTra 1.4-Dokumenten für das Sofortmeldungsverfahren</Description>
     <AssemblyTitle>Validierungen von Versicherungsnummernabfragen (eXTra 1.4, DRV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv</AssemblyName>
     <PackageId>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv</PackageId>
     <PackageTags>eXTra;standard;1.4;validierung;validation;DRV;DSRV;komserver;kommunikationsserver;verfahren;rentenversicherung;deutsche;versicherungsnummer</PackageTags>
@@ -17,12 +17,7 @@
     <ProjectReference Include="..\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv\Dataline.ExtraStandard.DrvKomServer.Extra14.Dsv.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>

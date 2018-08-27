@@ -25,7 +25,7 @@ namespace ExtraStandard.Tests
             const string TestString = "Hello World!";
             var senderCert = new X509Certificate2(_tempCert.Export(X509ContentType.Pkcs12));
             var receiverCert = new X509Certificate2(_tempCert.Export(X509ContentType.Cert));
-            var encryption = new ExtraStandard.Encryption.NativePkcs7EncryptionHandler(senderCert, receiverCert);
+            var encryption = new Encryption.NativePkcs7EncryptionHandler(senderCert, receiverCert);
             var testData = Encoding.UTF8.GetBytes(TestString);
             var timestamp = DateTime.Now;
             var encrypted = encryption.Encrypt(testData, timestamp);
@@ -39,7 +39,7 @@ namespace ExtraStandard.Tests
             const string TestString = "Hello World!";
             var senderCert = new Pkcs12Store(new MemoryStream(_tempCert.Export(X509ContentType.Pkcs12)), new char[0]);
             var receiverCert = Utils.FromX509Certificate(_tempCert);
-            var encryption = new ExtraStandard.Encryption.NativePkcs7EncryptionHandler(senderCert, receiverCert);
+            var encryption = new Encryption.NativePkcs7EncryptionHandler(senderCert, receiverCert);
             var testData = Encoding.UTF8.GetBytes(TestString);
             var timestamp = DateTime.Now;
             var encrypted = encryption.Encrypt(testData, timestamp);

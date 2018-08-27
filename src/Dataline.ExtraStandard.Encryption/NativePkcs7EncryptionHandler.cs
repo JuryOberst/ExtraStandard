@@ -1,5 +1,4 @@
-﻿#if SUPPORTS_PKCS_SIGNING
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -149,4 +148,3 @@ namespace ExtraStandard.Encryption
         }
     }
 }
-#endif

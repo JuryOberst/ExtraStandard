@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Definitionen für den eXTra-Standard 1.3 (DRV-Kommunikationsserver)</Description>
     <AssemblyTitle>eXTra-Standard 1.3 (DRV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.DrvKomServer.Extra13</AssemblyName>
     <PackageId>Dataline.ExtraStandard.DrvKomServer.Extra13</PackageId>
     <PackageTags>eXTra;standard;1.3;definition;DRV;DSRV;komserver;kommunikationsserver;verfahren;rentenversicherung;deutsche;sofortmeldung</PackageTags>
@@ -19,18 +19,7 @@
     <ProjectReference Include="..\Dataline.ExtraStandard.Extra13\Dataline.ExtraStandard.Extra13.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="System.Xml.XmlSerializer" Version="4.0.11" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System" />

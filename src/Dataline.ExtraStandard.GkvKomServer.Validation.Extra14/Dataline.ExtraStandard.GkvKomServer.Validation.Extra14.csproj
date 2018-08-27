@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Validierungen von eXTra 1.4-Dokumenten für das GKV-Kommunikationsserver-Verfahren</Description>
     <AssemblyTitle>Validierungen von eXTra 1.4-Dokumenten (GKV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.GkvKomServer.Validation.Extra14</AssemblyName>
     <PackageId>Dataline.ExtraStandard.GkvKomServer.Validation.Extra14</PackageId>
     <PackageTags>eXTra;standard;1.4;validierung;validation;GKV;komserver;kommunikationsserver;verfahren</PackageTags>
@@ -21,14 +21,7 @@
     <ProjectReference Include="..\Dataline.ExtraStandard.GkvKomServer.Extra14\Dataline.ExtraStandard.GkvKomServer.Extra14.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System" />

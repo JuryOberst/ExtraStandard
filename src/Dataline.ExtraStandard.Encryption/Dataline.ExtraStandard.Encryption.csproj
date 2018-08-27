@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Unterstützte Krypto-Verfahren für den eXTra-Standard</Description>
     <AssemblyTitle>eXTra-Standard-Krypto-Verfahren</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net45;net40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.Encryption</AssemblyName>
     <PackageId>Dataline.ExtraStandard.Encryption</PackageId>
     <PackageTags>eXTra;standard;1.4;krypto;verschlüsselung;pkcs7</PackageTags>
@@ -23,20 +23,16 @@
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.1.1" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Security" />
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System.Security" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Security.Cryptography.Pkcs">
+      <Version>4.5.0</Version>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

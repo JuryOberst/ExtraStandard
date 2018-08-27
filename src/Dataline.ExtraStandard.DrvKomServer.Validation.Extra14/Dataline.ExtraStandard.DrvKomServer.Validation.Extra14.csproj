@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Validierungen von eXTra 1.4-Dokumenten für das Sofortmeldungsverfahren</Description>
     <AssemblyTitle>Validierungen von eXTra 1.4-Dokumenten (DRV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14</AssemblyName>
     <PackageId>Dataline.ExtraStandard.DrvKomServer.Validation.Extra14</PackageId>
     <PackageTags>eXTra;standard;1.4;validierung;validation;DRV;DSRV;komserver;kommunikationsserver;verfahren;rentenversicherung;deutsche;sofortmeldung</PackageTags>

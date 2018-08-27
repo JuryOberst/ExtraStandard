@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Definitionen für den eXTra-Standard 1.3 (GKV-Kommunikationsserver)</Description>
     <AssemblyTitle>eXTra-Standard 1.3 (GKV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.GkvKomServer.Extra13</AssemblyName>
     <PackageId>Dataline.ExtraStandard.GkvKomServer.Extra13</PackageId>
     <PackageTags>eXTra;standard;1.3;definition;GKV;komserver;kommunikationsserver;verfahren</PackageTags>
@@ -19,12 +19,7 @@
     <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>

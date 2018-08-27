@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Unterstützte Kompressionsverfahren für den eXTra-Standard</Description>
     <AssemblyTitle>eXTra-Standard-Kompressionsverfahren</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.Compression</AssemblyName>
     <PackageId>Dataline.ExtraStandard.Compression</PackageId>
     <PackageTags>eXTra;standard;1.4;kompression;gzip;zip</PackageTags>
@@ -19,7 +19,7 @@
     <ProjectReference Include="..\Dataline.ExtraStandard\Dataline.ExtraStandard.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />

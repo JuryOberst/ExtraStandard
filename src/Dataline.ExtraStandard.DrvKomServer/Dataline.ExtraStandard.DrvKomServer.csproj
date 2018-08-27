@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>eXTra-Basis-Definitionen für das DRV-Kommunikationsserver-Verfahren</Description>
     <AssemblyTitle>eXTra-Basis-Definitionen (DRV-Kommunikationsserver)</AssemblyTitle>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Dataline.ExtraStandard.DrvKomServer</AssemblyName>
     <PackageId>Dataline.ExtraStandard.DrvKomServer</PackageId>
     <PackageTags>eXTra;standard;basis;definition;DRV;DSRV;komserver;kommunikationsserver;verfahren;rentenversicherung</PackageTags>
@@ -11,12 +11,7 @@
 
   <Import Project="$(MSBuildThisFileDirectory)..\..\Global.props" />
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
