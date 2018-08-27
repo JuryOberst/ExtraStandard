@@ -17,18 +17,22 @@
     <ProjectReference Include="..\Dataline.ExtraStandard.DrvKomServer.Extra13\Dataline.ExtraStandard.DrvKomServer.Extra13.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup>
+    <None Include="..\..\Packaging\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13.targets" Link="build\native\Dataline.ExtraStandard.DrvKomServer.Validation.Extra13.targets">
+      <PackagePath>build/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="..\..\Packaging\_._" Link="lib\native\_._">
+      <PackagePath>lib/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
   </ItemGroup>
 
 </Project>

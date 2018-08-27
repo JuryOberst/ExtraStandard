@@ -20,4 +20,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\Packaging\Dataline.ExtraStandard.OstcServer.targets" Link="build\native\Dataline.ExtraStandard.OstcServer.targets">
+      <PackagePath>build/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="..\..\Packaging\_._" Link="lib\native\_._">
+      <PackagePath>lib/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -22,4 +22,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\Packaging\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv.targets" Link="build\native\Dataline.ExtraStandard.DrvKomServer.Validation.Extra14.Dsv.targets">
+      <PackagePath>build/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="..\..\Packaging\_._" Link="lib\native\_._">
+      <PackagePath>lib/native/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
 </Project>
